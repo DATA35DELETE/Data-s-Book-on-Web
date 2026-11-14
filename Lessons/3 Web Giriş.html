@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data's Book on Web</title>
+
+    <link rel="icon" type="image/x-icon" href="../Sources/favicon.svg">
+
+    <script src="../Sources/JS/setBackgroundMedia.js"></script>
+
+    <link rel="stylesheet" href="../Sources/JS/hljs/atom-one-dark-reasonable.css">
+    <script src="../Sources/JS/hljs/highlight.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+        };
+    </script>
+
+    <link rel="stylesheet" href="../Sources/CSS/main.css">
+</head>
+<body>
+    <h1>Giriş</h1>
+
+    <div style="height: 100px;"></div>
+    
+    <div id="mainDiv">
+        <h2>Web Nedir?</h2>
+        <pre id="preh2">Web veya World Wide Web(Dünya Çapındaki Ağ), internet ile bilkgisayarların Dünyadaki bilgisayarla erişerek veya Web sayfaları denilen dosyaları paylaşarak bilgi alış-verişi sağlayan ortama denir.</pre>
+
+        <h3>İnternet ile Web'in Farkı</h3>
+        <pre id="preh3">Günlük hayatta sıklıkla karıştılırsada Web ile internet tamamiyle farklı iki kavramdır. İnternet, iki veya daha fazla cihazın birbirine bir ağ veya kablo yolu ile bağlanmasına ve bilgi alış-verişine denir. Web ise bunun Dünya çapındaki halidir. En büyük fark ise internet küçük bir ortamda kurulabilirken, Web devasa makinalar ve karmaşık sistemler ister. Hatta sizin evinizde modem var ise evinizde internet kurabilirsiniz. Sadece iki cihaz arasında Ip ve port açın ve bitti. Web ise daha da ölçeklidir.</pre>
+
+        <pre id="preh3">Örnek olarak siz evinizde arama motoruyla bir takım işler araştırırken, arama motorunun sistemi tabikide sizin evinizde bulunmuyor. Genelde ya şehir yada ülke dışında bulunmaktadır. Peki nasıl bağlandınız? Tabiki Web sayesinde. Web sizi evinizin veya mobil ağınızın internetini kullanarak evrensel internete bağlar. Ordan nereye gitmek istiyorsanız(Örn; Youtube), aratıyorsunuz ve bum! Bir anda sayfa önünüzde. İşte bu iki kavramın farkı budur.</pre>
+
+        <h3>İstemci-Sunucu Modeli</h3>
+        <pre id="preh3">Gelelim bu sistemin mimarisine... Web Dünyasında her bir iletişimin temelinde bu model yatar. Yani bu modeli anlarsak bütün iletişim işlerini anlayabiliriz.</pre>
+
+        <pre id="preh3">İlk olarak sunucu nedir? Sunucu aslında sizin karşı taraftan istediğiniz bilgileri(Video, yazı, müzik, vb) size aktaran veya depolayan bir Web'e bağlı bilgisayardır. Onlara özel olarak "Sunucu" denilmesinin sebebi çok özel bir cihaz olmasıdır. Evet temelinde bir bilgisayar ama iki terabayt RAM ve bir petabayt depolama alanına sahip olan bu bilgisayar tabiki bizim evdeki klasik on altı gigabayt RAM ve beş yüz on iki gigabayt depolanına kıyasla baya bir "özel" bilgisayar oluyor. Karşılaştırma bakımından; Bir terabayt bin gigabayt eder. Bir petabayt ise bin terabayt, dolayısıyla bir milyon gigabayt eder. Yani evdeki bilgisayarlarımızın tam bin dokuz yüz iki katıdır.</pre>
+
+        <pre id="preh3">İstemci ise az önce açıkladığım sunucudan bilgi alan taraf yani bizler oluyoruz. Daha iyi anlaşılması ise bir görsel sunalım;</pre>
+
+        <div id="divh3Img">
+            <img src="../Bibliography/3 Web Giriş.html/1.svg" alt="3.1" width="100%">
+        </div>
+
+        <h3>Url Yapısı</h3>
+        <pre id="preh3">Url veya Uniform Resource Locator(Tek Kaynak Bulucu), Web sitelerine girmemizi sağlayan metinsel ifadelerdir. Peki Web devasa bir internet olduğuna göreü, internette iletişim için Ip ve port gerektiğinde nasıl metinsel ifadeler bu devasa internette bizleri doğru Ip ve port adreslerine yönlendirebiliyorlar. Karşılaştırma;</pre>
+
+        <pre id="codeh3"><span>Ip ve Port</span><code>192.168.1.104:6490</code></pre>
+
+        <pre id="codeh3"><span>Url</span><code>https://google.com</code></pre>
+
+        <pre id="preh3">Bu nasıl mümkün olabiliryor? Bilgisayalar nereden bilebiliyorlarda bu Url metninden nasıl Ip adreslerini öğrenebiliyorlar. Cevap DNS sunucuları!</pre>
+
+        <pre id="preh3">DNS sunucuları aslında devasa dijital not defterleri gibi çalışır. Bir Web sayfası açıldığında ilk örnekteki gibi bir Ip ve port adresi verilir. Evet ama bu sayılar dizisini akılda tutmak oldukça zor öyle değil mi? Aynı düşünce internettin ilk çağlarında da mevcut olduğunda bilgisayar bilimciler bir çözüm üretiler. Yani DNS[Domain Name System(Alan Adı Sistemi)] sunucuları tüm Dünya'daki Url'lerin aslında hangi Ip ve port adresine sahip olduğunun kaydı olan ve Url ile bir siteye erişmek isteyen kullanıcıların uygun Ip ve port adreslerine yönlendiren sistemdir. Böylelikle kullanıcılar karmaşık bir sayı dizisini ezberlemek yerine doğrudan ve akılda kalıcı Url metinlerini ezberlerler.</pre>
+
+        <pre id="preh3">Peki Url'nin neden ortaya çıktığını anlattık. Acaba Url tek bir ifade mi yoksa içerisinde birden fazla önemli bilgiyi taşıyan bir yapı mı? Cevap tabiki her bilişim teknolojinde olduğu gibi birden fazla önemli bilgiyi taşına bir yapıdır. Gelin bir örnek üzerinden açıklayalım;</pre>
+
+        <pre id="codeh3"><span>Örnek Url</span><code>https://www.google.com/search?q=Web</code></pre>
+
+        <pre id="preh3">İlk kısım yani "https" kısmı protokol bölümüdür. Kullanılıcak olna protokolu belirlemektedir. Protokoller sunucu-istemci arasında iletişim türü demektir.</pre>
+
+        <pre id="preh3">Ardındaki "www.google.com" ise Domain yani alandır. Domain, DNS sunucularında kayıtlı olan Ip ve port numarasına çevrilir. Böylelikle sunucunun Web'deki adresine bağlanılır.</pre>
+
+        <pre id="preh3">Daha sonraki "search" kısmı Url'nin ana kısmıdır. Bu kısım sunucudaki belirli bir dizini temsil eder ve o dizine bağlanılır. Örnekte bulunan Url'de "search" dizinine bağlanıyoruz.</pre>
+
+        <pre id="preh3">Son olarak "?" ardındaki kısımlara da sorgu metni denir. Bu kısımın ana görevi istemciden sunucuya bilgi göndermektir. Böylelikle sunucu veriye göre bilgi gönderebilir.</pre>
+
+        <h3>HTTP ve HTTPS Farkı</h3>
+        <pre id="preh3">Bir diğer kavramlarımızdan olan HTTP ve HTTPS protokolleridir. Temelde ikiside aynı görevi yerine getirirler. HTTP yani Hyper-Text Transfer Protocol(Hiper-Metin Transfer Protokolü), Web üzerinden cihazlar arasında HTML[Hyper-Text Markup Language(Hiper-Metin İşaretleme Dili)] dosyalarını aktarmaktır. HTTPS açılımı ise Hyper-Text Transfer Protocol Secure(Güvenli Hiper-MEtin Transfer Protokolü)'dur. Anlaşılcağı üzerine HTTPS, HTTP'den daha güvenli. Peki nasıl? Ne var ki HTTP HTTPS'den daha güvensiz? Cevap internetin yapısında yatar.</pre>
+
+        <pre id="preh3">İnternet aslında kablo yığınlarında oluşan küçük veya devasa ağlardır. Her ne kadar kabloların arasında fazladan bir kablo ekleyemesekte dijital olarak araya girebiliriz. Bu tip eylemlere ortadaki adam eylemi denir. Mantık basit. İki cihaz arasında veri-alış verişi internetin yapısı geriği açık metinler olarak giderler. Eğer arada bir kötü niyetli kullanıcı var ise ağın arasına girerek veri-alış verişini görebilir hatta değiştirebilir. İnternetin ve Web'in ilk çağlarında bu sorun pek yoktu. Çünkü öyle bir olabilmesi için teknoloji müsait değildi. Teknoloji geliştikçe, bilgisayarlarda gelişti ve bir noktada cihazlar ağların arasına girebilir hale geldiler. O zamanlar Web neredeyse tamamı HTTP kullanıyordu. HTTP temel bir iletişim protokolü olduğu için bilgileri direkt metin olarak gönderirdi. Böylelikle BAM! kötü niyetli kullanıcılar araya girerek devasa miktarda verileri sızdırdılar. Banka verileri, devlet sırları ve daha niceleri Web'e sızmıştı. Bunu düzeltmek için 1994 yılında HTTPS'i geliştirdiler. Amaç şuydu; Aradaki kötü niyetli insanlar verilere erişemesin değildi, anlamsız verilere erişmeleriydi. Böylelikle RSA yani asenkron şifreleme teknolojisi ile HTTPS doğdu. RSA başka bir dökümantasyonun konusu ama kısaca açıklamak gerekirse iki cihaz arasında anlaşma ile bir dil oluş oluştururlar, o dil ile Web üzerinden konuşurlar. Kötü niyetli kullanıcılar ağın arasına girseler bir anlamsız sayı dizilerinden başka bir veri göremezler ki bu durumu halen sizde yapabilrisiniz (bkz: <a href="https://www.wireshark.org/download.html">Wireshark uygulaması</a>).</pre>
+
+        <h2>HTML Nedir?</h2>
+        <pre id="preh2">Şimdi ise asıl Web'in gözdesi HTML diline bakalım.</pre>
+
+        <h3>Kısa Tarihçesi</h3>
+        <pre id="preh3">HTML, 1980 yılında aslen fizikçi olan Tim Berners-Lee tarafından CERN araştırmacısı idi. O zamanlarda bilim insanları internet üzerinden belge paylaşımı yaparken sorunlar yaşıyorlardı. Sorun her belgenin farklı farklı formatlarla yazılmış olması idi. Bir belge üç bilgisayarda çalışıyor iken diğer yüz bilgisayarlarda açılmıyordu bile. İşte bu sorunuda yaşına Berners-Lee 1991 yılında ilk prototipi olan HTML dilini geliştirdi. HTML basitti; başlıklar, maddeler, fotoğraflar ve matematiksel formüller gibi bilim insanlarında belge oluştururken sıklıkla kullandıkları elemanlar yer alıyordu. Ardından Web'de büyük bir ilgi gördü. CERN'den çıkıp 2000'de W3C[World Wide Web Consortium(Dünya Çapındaki Ağ Konsorsiyomu)] himayesine girmiştir.Böylelikle şirketlerin ellerinde alınıp direkt olarak halka arz edilmiştir. 1990'dan bu yıla kadar HTML yüzlerce değiştirildi ve güncellendi. Aşağıdaki listede sırayla sürümleri, yılları ve önemli özellikleri verilmiştir.</pre>
+
+        <ul id="listh3">
+            <li>1990 HTML1; İlk sürümdür. Temel özellikler eklendi.</li>
+            <li>1995 HTML2; Form tabanlı dosya yükleme, resim ve tablolar eklendi.</li>
+            <li>14 Ocak 1997 HTML3; Matematiksel formüller kaldırıldı. İlk defa sadece W3C tarafından çıkartılan sürümdür. Diğer sürümler HTML Working Group ile beraber yapılıyordu.</li>
+            <li>18 Aralık 1997 HTML4; Hatalar giderildi. ISO tarafından uluslararası standart olarak tanındı. Paralel olarak XHTML ve XML dillerine başlandı</li>
+            <li>2014 HTML5; En yeni sürümdür. Sürüm ile beraber tüm Dünya'da kullanılan bir dosya formatı haline geldi ve sevdiğim haline büründü.</li>
+        </ul>
+        
+        <h3>İşaretleme Dili Kavramı</h3>
+        <pre id="preh3">Gelelim bir başka konumuza, işaretleme dili kavramı; Her ne kadar çoğunlukla ki bende dahil "programlama dili" olarak tanınsada HTML bir programlama dili değildir. İşaretleme dili kavramıda programlama dilide demek değildir. Kodları birazdan göreceğiz ki orada daha detaylı bir şekilde gözleyebiliriz.</pre>
+
+        <pre id="preh3">Peki HTML dili programlama dili değil ise nedir? Aslında düpedüz bir dosya formatıdır. Evet, ödevlerimizi yazdığımız Word, sunduğumuz PowerPoint veya tablolarıyla ünlü Excel dosyalarında farkı yoktur. Tek fark, bahsettiğim programların dosyaları makine tarafından yazılır ama HTML insanlar tarafında yazılır. Bir tablo ögesi yazarsınız ve tarayıcıda beliriverir. İşte HTML dili budur.</pre>
+
+        <h3>HTML'nin Rölü</h3>
+        <pre id="preh3">Peki o kadar HTML'den bahsettik ama CSS ve JavaScpirt'den bahsetmedik. Daha bu dillere çok sayfalar var ama genel geçer bir açıklama yapalım; Bir Web sayfasının ana unsurlarını oluşturan dil HTML, unsurları süsleyen dil CSS ve o unsurlara işlev ekliyen dil ise JavaScpirt'tir. Zamanla daha iyi oturucaktır. Şuanlık bu kavramı bilmeniz yeterlidir.</pre>
+
+        <h2>Geliştirme Ortamı</h2>
+        <pre id="preh2">Geliştirme ortamı için ben Visual Studio Code kullanıcağım. Fakat siz dilediğim geliştirme ortamını kullanabilirsiniz.</pre>
+
+        <pre id="preh2">Visual Studio Code programı kurulu değil ise <a href="https://code.visualstudio.com/download">sitesinden</a> indirebilirsiniz.</pre>
+
+        <pre id="preh2">Bu eklentileride; <a href="https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer">Live Server</a> ve <a href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier</a>'ı kuralım.</pre>
+
+        <h2>İlk HTML Dosyamız</h2>
+        <pre id="preh2">Evet artık işin sözelinden çıkıp pratiğe geçme vakti... İlk olarak Visual Studio Code'da bir çalışma dizini açalım. Ardından yeni dosya oluştururalım. Adını "index.html" olarak yazalım. Sonra dosyanın içeriği olarak "!" yazıp Ctrl + Space ile otomatik doldurma açalım. Daha sonra Enter'e basalım. Görüceğimiz içerik şu şekildedir;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh2">Şeklinde bir ifade görüceğizdir. Son olarak sağ altta bulunan "Go Live" butonuna basalım ki Live Server HTML dosyamızı tarayıcımızda görüntülesin.</pre>
+
+        <pre id="preh2">Görüceğimiz görüntü bembayaz bir sayfa olucaktır. Tebrikler! İlk HTML dosyanızı yazdınız.</pre>
+
+        <h3>Elemanlar</h3>
+        <pre id="preh3">Tabiki bu şekilde yazıp bırakamayız... Gelin beraber bu elemanlar veya HTML'deki etiketler nedir bakalım;</pre>
+
+        <pre id="preh3"><code class="language-html">&lt;!DOCTYPE html></code>, bu etiket HTML dosyasının HTML5 sürümüne ait olduğunu ifade eder ki tarayıcılar bu HTML5 göre sayfamızı görüntülesinler.</pre>
+
+        <pre id="preh3"><code class="language-html">&lt;html lang="en"></code>, HTML sayfamızın ana etiketidir. Tüm etiketler bu etiketin altında toplanır. İçerisindeki <code>lang="en"</code> ise sayfanın ana dilini belirtir. Türkçe bir şekilde eğitim verdiğimiz için onu "tr" yapalım.</pre>
+
+        <pre id="preh3"><code class="language-html">&lt;head></code> Türkçesiyle kafa, sayfanın meta verilerinin(ön veri) tanımlandığı ve sayfanın tarayıcıdaki üst kısmındaki ufak kutucuğun bilgilerini içeren kısımdır.</pre>
+
+        <div id="divh3Img">
+            <img src="../Bibliography/3 Web Giriş.html/2.png" alt="3.2" width="100%">
+        </div>
+
+        <pre id="preh3"><code class="language-html">&lt;meta charset="UTF-8"></code>, ön veri tanımları bu etiketten yapılır. İlerki sayfalarda daha detaylı göreceğiz.</pre>
+
+        <pre id="preh3"><code class="language-html">&lt;title>Document&lt;/title></code>, Web sitesinin başlığını belirtir.</pre>
+
+        <pre id="preh3"><code class="language-html">&lt;body></code>, son olarak bu etiket ise sitenin ana kısmını yani açıldığında gördüğümüz bembeyaz ekranın tamamıdır. Yazılar, başlıklar veya butonlar bu bölüme eklenir ve gözükürler.</pre>
+
+        <h3>Etiket(Tag) Kavramı</h3>
+        <pre id="preh3">Son olarak etiket kavramını açıklayalım. HTML'de etiket; büyüktür ve küçüktür işaretleriyle açılan ve kapanan, özellik tanımlayabildiğimiz ve ebeveyn-çocuk ilişkisi ile çalışan yapılardır. Daha iyi anlaşılması için aşağıda bir örnek bulunmaktadır.</pre>
+
+        <pre id="codeh3"><span>ebeveynCocukIliskisi.html</span><code class="language-html">&lt;etiketIsmi ozellik="ozellikDegeri">
+
+	&lt;cocuk1>&lt;/cocuk1>
+	&lt;cocuk2>&lt;/cocuk2>
+	&lt;cocuk3>&lt;/cocuk3>
+
+&lt;/etiketIsmi></code></pre>
+
+        <h3>Özellikler</h3>
+        <pre id="preh3">Etiket yapısında özellikler, etiketleri niteleyen unsurlardır. Aşağıda genel olarak tüm etiketlerde kullanılan(Ön veri etiketleri hariç) özellikler verilmiştir.</pre>
+
+        <ul id="listh3">
+            <li><code>id=""</code>, etiketin kendisine has bir Id tanımlamamızı sağlar. Metinsel bir ifadedir. Sadece tek bir elemanlar bulunabilir.</li>
+            <li><code>class=""</code>, etiketin kendisini bir sınıfa dahil eder. Id gibidir fakat birden fazla etikete verilebilir. Metinsel ifadedir.</li>
+            <li><code>style=""</code>, etikete özel CSS tanımlamızı sağlar. HTML5 ile kaldırılmıştır.</li>
+            <li><code>title=""</code>, etiketin üstüne fare imleci geldiğinde çıkıcak olan ifadedir. Metinsel ifadedir. Bilgi hakkında ek bir bilgi vermek için kullanılır.</li>
+            <li><code>hidden=""</code>, etiketi gizler. <code>true</code> veya <code>false</code> değeri alabilir.</li>
+            <li><code>data-veri-ismi=""</code>, etikete özel veri saklar. Metinsel ifadedir. Başındaki "data-" ifadesi bulunmak zorundadır. Veri ismi büyük karakter içermemelidir.</li>
+            <li><code>tabindex=""</code>, etikete Tab tuşu ile gezinme sırasını belirler. Sayısal değer alabilir.</li>
+            <li><code>lang=""</code>, etiketin içeriğinin hangi dilde olduğu belirtir. Metinseldir fakat değer olarak dillerin kodlarını alabilir.</li>
+            <li><code>dir=""</code>, etiketin içeriğinin sayfanın sağından mı yoksa solundan mı başlıcağını belirtir. Değer olarak "rtl" yani sağdan sola, "ltr" yani soldan sağa ve "auto" yani cihazın tercihine göre, değerlerini alabilir.</li>
+        </ul>
+
+        <h2>Kaynaklar</h2>
+        <ul>
+            <li><a href="https://tr.wikipedia.org/wiki/World_Wide_Web">https://tr.wikipedia.org/wiki/World_Wide_Web</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/URL">https://en.wikipedia.org/wiki/URL</a></li>
+            <li><a href="https://tr.wikipedia.org/wiki/HTTP">https://tr.wikipedia.org/wiki/HTTP</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/Domain_Name_System">https://en.wikipedia.org/wiki/Domain_Name_System</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/HTML">https://en.wikipedia.org/wiki/HTML</a></li>
+            <li><a href="https://en.wikipedia.org/wiki/HTTPS#History">https://en.wikipedia.org/wiki/HTTPS</a></li>
+            <li><a href="https://kodkasifi.com/yazilar/html-programlama-dili-mi/">https://kodkasifi.com/yazilar/html-programlama-dili-mi/</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_title.asp">https://www.w3schools.com/tags/att_title.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_data-.asp">https://www.w3schools.com/tags/att_data-.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_lang.asp">https://www.w3schools.com/tags/att_lang.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_dir.asp">https://www.w3schools.com/tags/att_dir.asp</a></li>
+        </ul>
+    </div>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./2 Web Önsöz.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2026 Data's Book</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 Web İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- Muhammet Enes nam-ı diğer Data Delete tarafından sevgi ile yapıldı <3 -->
