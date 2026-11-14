@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data's Book on Web</title>
+
+    <link rel="icon" type="image/x-icon" href="../Sources/favicon.svg">
+
+    <script src="../Sources/JS/setBackgroundMedia.js"></script>
+
+    <link rel="stylesheet" href="../Sources/JS/hljs/atom-one-dark-reasonable.css">
+    <script src="../Sources/JS/hljs/highlight.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+        };
+    </script>
+
+    <link rel="stylesheet" href="../Sources/CSS/main.css">
+</head>
+<body>
+    <h1>Temel Etiketler</h1>
+
+    <div style="height: 100px;"></div>
+    
+    <div id="mainDiv">
+        <h2>Başlıklar</h2>
+        <pre id="preh2">Başlıklar, konuların başına yazılırlar. Birden altıya kadar da seviyeleri bulunmaktadır.</pre>
+
+        <pre id="preh2">Örnek olması bakımında şöyle bir işlem yapalım. Ana konumuz "Yazılım" olsun. O konun alt başlıkları elbet vardır. Birinci alt başlığı "Donanım" olsun. Tabiki alt başlığında alt başlığı vardır. Bu başlıkta "Assembly" konusu olsun. Tabiki alt başlığın alt başlığının alt başlığıda olucak. O zaman bu da "Tarihçesi" olsun. Alt başlığının alt başlığın alt başlığında alt başlığı olur. O da "Andrew Donald Booth" olsun. Son olarak da bununda alt başlığı vardır. Oda "Tutkusu" olsun. Evet hadi bunu kodlayalım;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Yazılım&lt;/h1>
+    &lt;h2>Donanım&lt;/h2>
+    &lt;h3>Assembly&lt;/h3>
+    &lt;h4>Tarihçesi&lt;/h4>
+    &lt;h5>Andrew Donald Booth&lt;/h5>
+    &lt;h6>Tutkusu&lt;/h6>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh2">Çıktısı ise;</pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/4 Web Temel Etiketler.html/1.png" alt="4.1" width="100%">
+        </div>
+
+        <pre id="preh2">Şeklinde olucaktır. Yukarıdan aşağı doğru birden altıya kadar seviyesi vardır. Büyük seviye küçük başlık demektir.</pre>
+
+        <h2>Paragraf</h2>
+        <pre id="preh2">Paragraf, HTML'e yazı yazabildiğim etiketlere denir. Açılış ve kapanış etiketleri arasında istenilen yazı yazılır. Etiketi <code>&lt;p>&lt;/p></code> şeklindedir</pre>
+
+        <pre id="preh2">Birde sıklıkla kullanıcağımız bir komutta daha var. O da <code>lorem</code> komutudur. Aslında pek bir durum ifade etmez. Ama testlerde sıklıkla kullanılır. <code>lorem</code> komutu bizlere latinceden oluşan bir cümle dizisi verir. Paragraf etiketlerini kullanırken <code>lorem</code> yazın, ardından Ctrl + Space ve Enter tuşlarına basınız.</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Yazılım&lt;/h1>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+    &lt;h2>Donanım&lt;/h2>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+    &lt;h3>Assembly&lt;/h3>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+    &lt;h4>Tarihçesi&lt;/h4>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+    &lt;h5>Andrew Donald Booth&lt;/h5>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+    &lt;h6>Tutkusu&lt;/h6>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh2">Çıktı ise;</pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/4 Web Temel Etiketler.html/2.png" alt="4.2" width="100%">
+        </div>
+
+        <pre id="preh2">Görüldüğü üzere yazılarımızı bu şekilde yazarız.</pre>
+
+        <h2>Satır Atlama ve Yatay Çizgi</h2>
+        <pre id="preh2">HTML'de biz yapısı gereği satır atlayamayız. Ne kadar satır koysak bile görüntüde herhangi bir değişiklik gözlemlenmez. Bunun için satır atlama(<code class="language-html">&lt;br></code>) ve yatat çizgi için(<code class="language-html">&lt;hr></code>) etiketleri bulunur. Bu tarz etiketlerin kapanış etiketi bulunmaz. Çünkü içerisine herhangi bir içerik yazılmaz.</pre>
+
+        <pre id="preh2">Şimdi örneğimize satırlar ve yata çizgiler ekliyelim;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Yazılım&lt;/h1>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit &lt;br>. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+    &lt;hr>
+
+    &lt;h2>Donanım&lt;/h2>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus&lt;br> doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+    &lt;hr>
+
+    &lt;h3>Assembly&lt;/h3>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus&lt;br> doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+    &lt;hr>
+
+    &lt;h4>Tarihçesi&lt;/h4>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus doloribus. Sapiente similique quod at&lt;br> delectus saepe distinctio?&lt;/p>
+
+    &lt;hr>
+
+    &lt;h5>Andrew Donald Booth&lt;/h5>
+    &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur&lt;br> eos alias laudantium quis, ab libero nemo eius at. Corporis libero &lt;br>unde minus doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+    &lt;hr>
+
+    &lt;h6>Tutkusu&lt;/h6>
+    &lt;p>Lorem ipsum dolor sit &lt;br>amet consectetur adipisicing elit. Aspernatur eos alias laudantium quis, ab libero nemo eius at. Corporis libero unde minus doloribus. Sapiente similique quod at delectus saepe distinctio?&lt;/p>
+
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh2">Çıktı;</pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/4 Web Temel Etiketler.html/3.png" alt="4.3" width="100%">
+        </div>
+
+        <h2>Metin Biçimlendirme Etiketleri</h2>
+        <pre id="preh2">HTML metinleri çizebilir, vurgulayabilir, kalınlaştırıp veya italikleştirebiliriz. Bu etiketlerin bazıları aşağıda verilmiştir;</pre>
+
+        <h3>Kalınlaştırma</h3>
+        <pre id="preh3"><code>&lt;b>&lt;/b></code> veya <code>&lt;strong>&lt;/strong></code> etiketleri kullanılır.</pre>
+
+        <h3>İtalikleştirme</h3>
+        <pre id="preh3"><code>&lt;i>&lt;/i></code> veya <code>&lt;em>&lt;/em></code> etiketleri kullanılır.</pre>
+
+        <h3>Altını Çizdirme</h3>
+        <pre id="preh3"><code>&lt;u>&lt;/u></code> veya <code>&lt;ins>&lt;/ins></code> etiketleri kullanılır.</pre>
+
+        <h3>Üstünü Çizdirme</h3>
+        <pre id="preh3"><code>&lt;s>&lt;/s></code> veya <code>&lt;del>&lt;/del></code> etiketleri kullanılır.</pre>
+
+        <h3>Vurgulama</h3>
+        <pre id="preh3"><code>&lt;mark>&lt;/mark></code> etiketi kullanılır.</pre>
+
+        <h3>Küçültme</h3>
+        <pre id="preh3"><code>&lt;small>&lt;/small></code> etiketi kullanılır.</pre>
+
+        <h3>Alt Simge</h3>
+        <pre id="preh3"><code>&lt;sub>&lt;/sub></code> etiketi kullanılır. Formüllerde kullanılır.</pre>
+
+        <h3>Üst Simge</h3>
+        <pre id="preh3"><code>&lt;sup>&lt;/sup></code> etiketi kullanılır. Formüllerde kullanılır.</pre>
+
+        <h3>Kısaltma</h3>
+        <pre id="preh3"><code>&lt;abbr>&lt;/abbr></code> etiketleri kullanılır. Kısaltmanın kaynağını belirtmek için <code>title</code> özelliği kullanılır.</pre>
+
+        <h3>Alıntı</h3>
+        <pre id="preh3"><code>&lt;blockquote>&lt;/blockquote></code> veya <code>&lt;q>&lt;/q></code> etiketleri kullanılır. Alıntının kaynağını belirtmek için <code>cite</code> özelliği kullanılır.</pre>
+
+        <h3>Teknik Metinler</h3>
+        <pre id="preh3"><code>&lt;code>&lt;/code></code>, içerisine yazılım kodları yazılır.</pre>
+        <pre id="preh3"><code>&lt;pre>&lt;/pre></code>, içerisine yazı kaydırılmaz veya otomatik boyutlandırılmaz. Direkto olarak HTML'e yansır.</pre>
+        <pre id="preh3"><code>&lt;kbd>&lt;/kbd></code>, klayve tuşunu belirtmek için kullanılır.</pre>
+        <pre id="preh3"><code>&lt;samp>&lt;/samp></code>, içerisine bir bilgisayar programının çıktısı yazılır.</pre>
+        <pre id="preh3"><code>&lt;var>&lt;/var></code>, matematikde veya yazılım dillerinde değişkenleri ifade etmek için kullanılır.</pre>
+
+        <pre id="preh3">Gelin bu etiketleri bir örenkte kullanalım;</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Kalınlaştırma&lt;/h1>
+    &lt;p>&lt;b>Bu metin&lt;/b> &lt;strong>kalındır&lt;/strong>.&lt;/p>
+
+    &lt;h1>İtalikleştirme&lt;/h1>
+    &lt;p>&lt;i>Bu metin&lt;/i> &lt;em>italiktir&lt;/em>.&lt;/p>
+
+    &lt;h1>Altını Çizdirme&lt;/h1>
+    &lt;p>Bu metin &lt;ins>altı çizilirdir&lt;/ins>.&lt;/p>
+
+    &lt;h1>Üstünü Çizdirme&lt;/h1>
+    &lt;p>Bu metin &lt;del>üstü çizilidir&lt;/del>.&lt;/p>
+    
+    &lt;h1>Vurgulama&lt;/h1>
+    &lt;p>Bu metin &lt;mark>vurguludur&lt;/mark>.&lt;/p>
+
+    &lt;h1>Küçültme&lt;/h1>
+    &lt;p>Bu metin &lt;small>küçüktür&lt;/small>.&lt;/p>
+
+    &lt;h1>Alt Simge&lt;/h1>
+    &lt;p>H&lt;sub>2&lt;/sub> + O -> H&lt;sub>2&lt;/sub>O&lt;/p>
+    
+    &lt;h1>Üst Simge&lt;/h1>
+    &lt;p>2&lt;sup>2&lt;/sup> = 4&lt;/p>
+
+    &lt;h1>Kısaltma&lt;/h1>
+    &lt;p>&lt;abbr title="Bu metin bir kısaltmadır.">BMBK&lt;/abbr>.&lt;/p>
+
+    &lt;h1>Alıntı&lt;/h1>
+    &lt;p>&lt;blockquote cite="All Tomorrows">Bugünü sevin ve sizin olsun tüm yarınlar...&lt;/blockquote>.&lt;/p>
+
+    &lt;h1>Teknik Metinler&lt;/h1>
+
+    &lt;h2>Kod&lt;/h2>
+    &lt;pre>&lt;code>#include &lt;stdio.h>
+
+int main()
+{
+    printf("Selam");
+
+    return 0;
+}&lt;/code>&lt;/pre>
+
+    &lt;h2>Klavye Tuşları&lt;/h2>
+    &lt;p>
+        Dosyayı kayıt etmek için 
+
+        &lt;kbd>Ctrl&lt;/kbd> 
+        +
+        &lt;kbd>S&lt;/kbd>
+
+        kombinasyonları kullanılır.
+    &lt;/p>
+
+    &lt;h2>Program Çıktıları&lt;/h2>
+    &lt;p>&lt;samp>Selam&lt;/samp> çıktısı vericektir.&lt;/p>
+
+    &lt;h2>Değişkenler&lt;/h2>
+    &lt;p>x + 2 = 2, bu işlemde &lt;var>x&lt;/var> 0 değerindedir.&lt;/p>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh3">Çıktısı ise;</pre>
+
+        <div id="divh3Img">
+            <img src="../Bibliography/4 Web Temel Etiketler.html/4.png" alt="4.4" width="100%">
+            <img src="../Bibliography/4 Web Temel Etiketler.html/5.png" alt="4.5" width="100%">
+        </div>
+
+        <h2>Bağlantılar</h2>
+        <pre id="preh2">Bağlantılar için genellikle <code>&lt;a>&lt;/a></code> etiketi kullanılır. <code>href</code> özelliğide bağlantının Url'si girilir. Kullanıcı etiketin içerisindeki yazıyı görür. Ancak tıkladığında <code>href</code> özelliğindeki Url'ye yönlendirilir.</pre>
+
+        <pre id="preh2">Hadi bir örnek yapalım;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code>&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Bağlantılar&lt;/h1>
+    &lt;a href="https://data35delete.github.io/Data-s-Book-on-Web">Data's Book on Web&lt;/a>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh2">Çıktısı;</pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/4 Web Temel Etiketler.html/6.png" alt="4.6" width="100%">
+        </div>
+        
+        <h3>Dahili ve Harici Bağlantılar</h3>
+        <pre id="preh3">Dahili bağlantılar, Web sitesinin aynı sunucusunda olan HTML dosyalarına yönlendirlen; Harici bağlantılarda farklı sunucularadaki sitelere yönlendiren bağlantılardır.</pre>
+
+        <h3>Target Özelliği</h3>
+        <pre id="preh3"><code>target</code> özelliği, bağlantının hangi biçimde açılcağı belirler. Aşağıda biçimlerin isimleri ve işlevleri verilmiştir;</pre>
+
+        <ul>
+            <li><code>_blank</code>, bağlantıyı farklı bir pencerede açar.</li>
+            <li><code>_self</code>, bağlantıyı aynı sekmede açar. Varsayılan olarak kullanılır.</li>
+        </ul>
+
+        <h3>Rel Özelliği</h3>
+        <pre id="preh3"><code>rel</code>, bağlantının Web sitesiyle ilgi seviyesini belirler. Aşağıda özelliğin değerleri ve özellikleri verilmiştir;</pre>
+
+        <ul>
+            <li><code>noopener</code>, bağlantı Web sitesiyle pek bir ilgisi olmadığını belirtir.</li>
+            <li><code>noreferrer</code>, bağlantının yönlendiricisinin anonim olmasını sağlar.</li>
+            <li><code>nofollow</code>, arama motorları tarafından girilmemesini sağlar.</li>
+        </ul>
+
+        <h3>Çapa Bağlantılar</h3>
+        <pre id="preh3">Çağa bağlantı, aynı sayfa içerisinde farklı kısımlara yönlendiren bir bağlantı türüdür. Oluşturmak için Hashtag işareti ile yapılır.</pre>
+
+        <pre id="preh3">Örnek olması için bir sayfa tasarlayalım;</pre>
+
+        <pre id="codeh3"><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;a name="basKismi">&lt;/a>
+    &lt;a href="#asagiKisim">Aşağı git&lt;/a>
+
+    lorem*500 &lt;!-- Enter basınız -->
+
+    &lt;a name="asagiKisim">&lt;/a>
+    &lt;a href="#basKismi">Başa git&lt;/a>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh3">Çıktısı;</pre>
+
+        <div id="divh3Vid">
+            <video controls src="../Bibliography/4 Web Temel Etiketler.html/7.mp4" alt="4.6" width="100%"></video>
+        </div>
+
+        <h3>E-Posta ve Numara</h3>
+        <pre id="preh3">Bağlantılarda E-Posta ve numara ekliyebiliriz.</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>E-Posta&lt;/h1>
+    &lt;a href="mailto:data.delete3509@gmail.com">E-Posta&lt;/a>
+
+    &lt;h1>Telefon Numarası&lt;/h1>
+    &lt;a href="tel:0555-555-55-55">Telefon Numarası&lt;/a>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh3Vid">
+            <video controls src="../Bibliography/4 Web Temel Etiketler.html/8.mp4" alt="4.8" width="100%"></video>
+        </div>
+
+        <h3>Download Özelliği</h3>
+        <pre id="preh3"><code>download</code> özelliği, bağlantının indirilebilir dosya olduğunu belirtir.</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>İndirilebilir İçerik&lt;/h1>
+    &lt;a download href="https://data35delete.github.io/Data-s-Book-on-Rust/Sources/favicon.png">favicon&lt;/a>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <h2>Görseller</h2>
+        <pre id="preh2">HTML'de görsellerde ekliyebiliriz. Görsel içerik eklemek için aşağıda işlemler verilmiştir.</pre>
+
+        <h3>Fotoğraf</h3>
+        <pre id="preh3">Fotoğraf eklemek için <code>&lt;img>&lt;/img></code> etiketi kullanılır.</pre>
+        <ul id="listh3">
+            <li><code>src</code> özelliği, görüntülenecek olan fotoğrafın dosya yoludur.</li>
+            <li><code>alt</code> özelliği, fotoğraf bulunamaz veya yüklenemezse çıkıcak yazı.</li>
+            <li><code>width</code> özelliği, görüntülenecek olan fotoğrafın genişliği. Ayarlanan genişliğe göre <code>height</code> özelliğide otomatik ayarlanır. Ancak sadece <code>width</code> tanımlı olduğunda.</li>
+            <li><code>height</code> özelliği, görüntülenecek olan fotoğrafın genişliği. Ayarlanan yüksekliği göre <code>width</code> özelliğide otomatik ayarlanır. Ancak sadece <code>height</code> tanımlı olduğunda.</li>
+        </ul>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Örnek Fotoğraf&lt;/h1>
+    &lt;img src="https://raw.githubusercontent.com/DATA35DELETE/AllMyRepoFoto/main/Data-s-Book-on-Demo/main/i%C3%A7indekinler%20k%C4%B1sm%C4%B1.png" alt="Örnek Fotoğraf" width="1000px">
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh3">Çıktı;</pre>
+
+        <div id="divh3Img">
+            <img src="../Bibliography/4 Web Temel Etiketler.html/9.png" alt="4.9" width="100%">
+        </div>
+
+        <h3>Görsel Formatları</h3>
+        <pre id="preh3">Görsel formatları aşağıda tablo şeklinde verilmiştir.</pre>
+
+        <table id="tableh3">
+            <thead>
+                <tr>
+                    <th>Türü</th>
+                    <th>Özelliği</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>PNG</td>
+                    <td>Kayıpsız fotoğraf sıkıştırma, saklama ve saydam arka planlar için kullanılır.</td>
+                </tr>
+                <tr>
+                    <td>JPG</td>
+                    <td>Kayıplı fotoğraf sıkıştırma ve saklama için kullanılır. Saydan arka plan özelliği yoktur.</td>
+                </tr>
+                <tr>
+                    <td>GIF</td>
+                    <td>Kayıpsız fotoğraf sıkıştırma ve saklama için kullanılır. Saydan arka plan özelliği vardır. Hareketli resimler yapılabilir.</td>
+                </tr>
+                <tr>
+                    <td>SVG</td>
+                    <td>Vektörel yani her ne kadar boyutta olursa olsun "pikselleşem" meydana getirtmeyen bir formattır. Dili XML dilidir. Animasyonu destekler</td>
+                </tr>
+                <tr>
+                    <td>WebP</td>
+                    <td>Google tarafından geliştirilen, kayıplı ve kayıpsız sıkıştırma sağlayan, animasyon imkanı sağlayan ve şeffaf pikseller barındırabilen fotoğraf formatıdır.</td>
+                </tr>
+                <tr>
+                    <td>AVIF</td>
+                    <td>Kayıplı ve kayıpsız sıkıştırma sağlayan ve şeffaf pikseller barındırabilen fotoğraf formatıdır.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Figure</h2>
+        <pre id="preh3"><code>&lt;img>&lt;/img></code> etiketine özel olarak bir önveri eklememizi sağlar.</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Örnek Fotoğraf&lt;/h1>
+    &lt;figure> &lt;!-- Fotoğraf figürü -->
+        &lt;img src="https://raw.githubusercontent.com/DATA35DELETE/AllMyRepoFoto/main/Data-s-Book-on-Demo/main/i%C3%A7indekinler%20k%C4%B1sm%C4%B1.png" alt="Örnek Fotoğraf" width="1000px">
+        &lt;figcaption>Data's Book on Demo, Ekran görüntüsü&lt;/figcaption> &lt;!-- Fotoğraf önverisi -->
+    &lt;/figure>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh3">Görüntüsü;</pre>
+
+        <div id="divh3Img">
+            <img src="../Bibliography/4 Web Temel Etiketler.html/10.png" alt="4.10" width="100%">
+        </div>
+
+        <h3>Picture</h3>
+        <pre id="preh3"><code>&lt;picture>&lt;/picture></code> etiketinde ekranın boyutlarına göre farklı resimler görüntülememizi sağlar. <code>&lt;source>&lt;/source></code> etiketi ile bu koşul yapısı kurulur. En son <code>&lt;img>&lt;/img></code> etiketi ile de varsayılan olarak yüklenecek fotoğraf belirlenir.</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Örnek Fotoğraf&lt;/h1>
+    &lt;picture>
+        &lt;source media="(min-width:700px)" srcset="https://raw.githubusercontent.com/DATA35DELETE/AllMyRepoFoto/main/Data-s-Book-on-Demo/main/%C3%B6rnek%20sayfa.png"> &lt;!-- Genişlik en düşün 700px ise -->
+        &lt;source media="(min-width:500px)" srcset="https://raw.githubusercontent.com/DATA35DELETE/AllMyRepoFoto/main/Data-s-Book-on-Demo/main/%C3%B6rnek%20sayfa%202.png"> &lt;!-- Genişlik en düşün 500px ise -->
+        
+        &lt;img src="https://raw.githubusercontent.com/DATA35DELETE/AllMyRepoFoto/main/Data-s-Book-on-Demo/main/i%C3%A7indekinler%20k%C4%B1sm%C4%B1.png" alt="Örnek Fotoğraf" width="1000px"> &lt;!-- Hiç biri tutmazsa bu fotoğrafı görüntüle -->
+    &lt;/picture>
+
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh3">Görüntüsü;</pre>
+
+        <div id="divh3Vid">
+            <video controls src="../Bibliography/4 Web Temel Etiketler.html/11.mp4" width="100%"></video>
+        </div>
+
+        <h3>Lazy</h3>
+        <pre id="preh3"><code>&lt;code>&lt;/code></code> etiketini "Lazy" olarak yükleyebiliriz. Peki nedir bu Lazy? Kelime anlamı olarak "tembel" çevrilen Lazy, yazılım dünyasında "İşi varsa yüklen" felsefesini temsil eder. Yani Lazy olan bir usnur sadece görüntülendiğinde veya kullanıldığında RAM'e yüklenir. Bu durumun Web karşılığı, kullanıcı Lazy olan bir fotoğrafa geldiğinde, fotoğraf anlık olarak yüklenir. Normal şartlarda bir Web sitesi açıldığında tüm ögeleri aynı anda yüklenirken, Lazy ise gerek duyulduğunda yüklenir.</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Örnek Fotoğraf&lt;/h1>
+    &lt;img src="https://raw.githubusercontent.com/DATA35DELETE/AllMyRepoFoto/main/Data-s-Book-on-Demo/main/i%C3%A7indekinler%20k%C4%B1sm%C4%B1.png" alt="fotoğraf" loading="lazy">
+
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh3">Çıktı;</pre>
+
+        <div id="divh3Img">
+            <img src="../Bibliography/4 Web Temel Etiketler.html/9.png" alt="4.12" width="100%">
+        </div>
+
+        <h2>Yorum Satırları</h2>
+        <pre id="preh2">Yorum satırları, tarayıcı için hiç bir ifade etmeyen, görüntülenmeyen ögelerdir. <code>&lt;!-- yorum içeriği --></code> şeklinde yazılırlar.</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;!-- Data Delete tarafından sevgi ile yapılmıştır &lt;3 -->
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh3">Çıktısı bembeyaz ekran olucaktır.</pre>
+
+        <h2>Kaynakça</h2>
+        <ul>
+            <li><a href="https://www.w3schools.com/tags/tag_pre.asp">https://www.w3schools.com/tags/tag_pre.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_kbd.asp">https://www.w3schools.com/tags/tag_kbd.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_samp.asp">https://www.w3schools.com/tags/tag_samp.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_var.asp">https://www.w3schools.com/tags/tag_var.asp</a></li>
+            <li><a href="https://www.geeksforgeeks.org/techtips/difference-between-external-link-and-internal-link/">https://www.geeksforgeeks.org/techtips/difference-between-external-link-and-internal-link/</a></li>
+            <li><a href="https://www.geeksforgeeks.org/html/html-target-attribute/">https://www.geeksforgeeks.org/html/html-target-attribute/</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_a_rel.asp">https://www.w3schools.com/tags/att_a_rel.asp</a></li>
+            <li><a href="https://www.geeksforgeeks.org/html/how-to-create-mail-and-phone-link-in-html/">https://www.geeksforgeeks.org/html/how-to-create-mail-and-phone-link-in-html/</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_a_download.asp">https://www.w3schools.com/tags/att_a_download.asp</a></li>
+            <li><a href="https://tr.wikipedia.org/wiki/Portable_Network_Graphics">https://tr.wikipedia.org/wiki/Portable_Network_Graphics</a></li>
+            <li><a href="https://tr.wikipedia.org/wiki/JPEG">https://tr.wikipedia.org/wiki/JPEG</a></li>
+            <li><a href="https://tr.wikipedia.org/wiki/Graphics_Interchange_Format">https://tr.wikipedia.org/wiki/Graphics_Interchange_Format</a></li>
+            <li><a href="https://tr.wikipedia.org/wiki/WebP">https://tr.wikipedia.org/wiki/WebP</a></li>
+            <li><a href="https://tr.wikipedia.org/wiki/AVIF">https://tr.wikipedia.org/wiki/AVIF</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_figure.asp">https://www.w3schools.com/tags/tag_figure.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_picture.asp">https://www.w3schools.com/tags/tag_picture.asp</a></li>
+            <li><a href="https://www.geeksforgeeks.org/html/lazy-loading-images-in-html/">https://www.geeksforgeeks.org/html/lazy-loading-images-in-html/</a></li>
+        </ul>
+    </div>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./3 Web Giriş.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2026 Data's Book</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 Web İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- Muhammet Enes nam-ı diğer Data Delete tarafından sevgi ile yapıldı <3 -->
