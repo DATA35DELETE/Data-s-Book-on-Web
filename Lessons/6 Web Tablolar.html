@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data's Book on Web</title>
+
+    <link rel="icon" type="image/x-icon" href="../Sources/favicon.svg">
+
+    <script src="../Sources/JS/setBackgroundMedia.js"></script>
+
+    <link rel="stylesheet" href="../Sources/JS/hljs/atom-one-dark-reasonable.css">
+    <script src="../Sources/JS/hljs/highlight.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+        };
+    </script>
+
+    <link rel="stylesheet" href="../Sources/CSS/main.css">
+</head>
+<body>
+    <h1>Tablolar</h1>
+
+    <div style="height: 100px;"></div>
+    
+    <div id="mainDiv">
+        <h2>Tablolar Nedir?</h2>
+        <pre id="preh2">Tablolar, sütün ve satırlardan oluşan veri sunma aracıdır. HTML'de bu yapı için <code>&lt;table>&lt;/table></code> etiketi kullanılır. Her bir satır için <code>&lt;tr>&lt;/tr></code>, her bir satırdaki sütünlar için <code>&lt;td>&lt;/td></code> ve her üst satırdaki veya yan satırlardaki kategoriler için de <code>&lt;th>&lt;/th></code> kullanılır.</pre>
+
+        <pre id="preh2">Örnek olması açısından bir çarpım tablosu yapalım;</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Çarpım Tablosu&lt;/h1>
+    &lt;table border="1"> &lt;!-- Ana etiket. Border özelliği kaldırıldı fakat daha CSS bilmediğimizden dolayı sınırlar gözüksün dedik -->
+        &lt;tr> &lt;!-- Bir satır -->
+            &lt;th>X&lt;/th> &lt;!-- Her bir sütünda bulunacak olan bilginin etiketi, bu etiket tablonun kategorik verisi olduğunu için kalın yazılır -->
+            &lt;th>1&lt;/th>
+            &lt;th>2&lt;/th>
+            &lt;th>3&lt;/th>
+            &lt;th>4&lt;/th>
+            &lt;th>5&lt;/th>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th>1&lt;/th>
+            &lt;td>1&lt;/td> &lt;!-- Her bir sütünda bulunacak olan bilginin etiketi -->
+            &lt;td>2&lt;/td>
+            &lt;td>3&lt;/td>
+            &lt;td>4&lt;/td>
+            &lt;td>5&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th>2&lt;/th>
+            &lt;td>2&lt;/td>
+            &lt;td>4&lt;/td>
+            &lt;td>6&lt;/td>
+            &lt;td>8&lt;/td>
+            &lt;td>10&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th>3&lt;/th>
+            &lt;td>3&lt;/td>
+            &lt;td>6&lt;/td>
+            &lt;td>9&lt;/td>
+            &lt;td>12&lt;/td>
+            &lt;td>15&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th>4&lt;/th>
+            &lt;td>4&lt;/td>
+            &lt;td>8&lt;/td>
+            &lt;td>12&lt;/td>
+            &lt;td>16&lt;/td>
+            &lt;td>20&lt;/td>
+        &lt;/tr>
+        &lt;tr>
+            &lt;th>5&lt;/th>
+            &lt;td>5&lt;/td>
+            &lt;td>10&lt;/td>
+            &lt;td>15&lt;/td>
+            &lt;td>20&lt;/td>
+            &lt;td>25&lt;/td>
+        &lt;/tr>
+    &lt;/table>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/6 Web Tablolar.html/1.png" alt="6.1" width="100%">
+        </div>
+
+        <h2>Tablonun Bölümler</h2>
+        <pre id="preh2">Tabloda HTML dili için belirli bölgelere ayrılır. En üst kısma <code>&lt;thead>&lt;/thead></code> etiketi, tablonun orta kısmına <code>&lt;tbody>&lt;/tbody></code> ve <code>&lt;tfoot>&lt;/tfoot></code> etiketide en alt kısma verilir.</pre>
+
+        <pre id="preh2">Örneğimize bu konuyu uygulayalım;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Çarpım Tablosu&lt;/h1>
+    &lt;table border="1">
+        &lt;thead> &lt;!-- Tablonun üst kısmı -->
+            &lt;tr>
+                &lt;th>X&lt;/th>
+                &lt;th>1&lt;/th>
+                &lt;th>2&lt;/th>
+                &lt;th>3&lt;/th>
+                &lt;th>4&lt;/th>
+                &lt;th>5&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        
+        &lt;tbody> &lt;!-- Tablonun ana kısmı -->
+            &lt;tr>
+                &lt;th>1&lt;/th>
+                &lt;td>1&lt;/td>
+                &lt;td>2&lt;/td>
+                &lt;td>3&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>5&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>2&lt;/th>
+                &lt;td>2&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>10&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>3&lt;/th>
+                &lt;td>3&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>9&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>15&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>4&lt;/th>
+                &lt;td>4&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>16&lt;/td>
+                &lt;td>20&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+
+        &lt;tfoot> &lt;!-- Tablonun son kısmı -->
+            &lt;tr>
+                &lt;th>5&lt;/th>
+                &lt;td>5&lt;/td>
+                &lt;td>10&lt;/td>
+                &lt;td>15&lt;/td>
+                &lt;td>20&lt;/td>
+                &lt;td>25&lt;/td>
+            &lt;/tr>
+        &lt;/tfoot>
+    &lt;/table>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh2">Görüntü olarak bir değişiklik gözmemektedir.</pre>
+
+        <h2>Tablo Başlığı</h2>
+        <pre id="preh2">Tabloya kendi başlığını eklemek için <code>&lt;caption>&lt;/caption></code> etiketi kullanılır.</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;table border="1">
+        &lt;caption>Çarpım Tablosu&lt;/caption> &lt;!-- Tablo başlığı -->
+
+        &lt;thead>
+            &lt;tr>
+                &lt;th>X&lt;/th>
+                &lt;th>1&lt;/th>
+                &lt;th>2&lt;/th>
+                &lt;th>3&lt;/th>
+                &lt;th>4&lt;/th>
+                &lt;th>5&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        
+        &lt;tbody>
+            &lt;tr>
+                &lt;th>1&lt;/th>
+                &lt;td>1&lt;/td>
+                &lt;td>2&lt;/td>
+                &lt;td>3&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>5&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>2&lt;/th>
+                &lt;td>2&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>10&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>3&lt;/th>
+                &lt;td>3&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>9&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>15&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>4&lt;/th>
+                &lt;td>4&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>16&lt;/td>
+                &lt;td>20&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+
+        &lt;tfoot>
+            &lt;tr>
+                &lt;th>5&lt;/th>
+                &lt;td>5&lt;/td>
+                &lt;td>10&lt;/td>
+                &lt;td>15&lt;/td>
+                &lt;td>20&lt;/td>
+                &lt;td>25&lt;/td>
+            &lt;/tr>
+        &lt;/tfoot>
+    &lt;/table>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/6 Web Tablolar.html/2.png" alt="6.2" width="100%">
+        </div>
+
+        <h2>Hücre Birleştirme</h2>
+        <pre id="preh2">Tablolarımızda istersek bazı hücreleri birleştirebiliriz. Bunun için <code>rowspan</code> özelliği ve <code>colspan</code> özelliği kullanılır. Tablonun veri etiketlerine yazılır. Uygulayalım;</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;table border="1">
+        &lt;thead>
+            &lt;tr>
+                &lt;th colspan="7">Çarpma Tablosu&lt;/th>
+
+                &lt;!-- Diğer sütünlar boş olduğu için diğer 6 sütünada yayılır -->
+            &lt;/tr>
+
+            &lt;tr>
+                &lt;th>&lt;/th> &lt;!-- Boş sütun -->
+
+                &lt;th>X&lt;/th>
+                &lt;th>1&lt;/th>
+                &lt;th>2&lt;/th>
+                &lt;th>3&lt;/th>
+                &lt;th>4&lt;/th>
+                &lt;th>5&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        
+        &lt;tbody>
+            &lt;tr>
+                &lt;th rowspan="6">Çarpma Tablosu&lt;/th>
+                
+                &lt;!-- Diğer satırlar boş olduğu için diğer 5 satıra yayılır -->
+
+                &lt;th>1&lt;/th>
+                &lt;td>1&lt;/td>
+                &lt;td>2&lt;/td>
+                &lt;td>3&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>5&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>2&lt;/th>
+                &lt;td>2&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>10&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>3&lt;/th>
+                &lt;td>3&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>9&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>15&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>4&lt;/th>
+                &lt;td>4&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>16&lt;/td>
+                &lt;td>20&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+
+        &lt;tfoot>
+            &lt;tr>
+                &lt;td>&lt;/td> &lt;!-- Boş sütun -->
+
+                &lt;th>5&lt;/th>
+                &lt;td>5&lt;/td>
+                &lt;td>10&lt;/td>
+                &lt;td>15&lt;/td>
+                &lt;td>20&lt;/td>
+                &lt;td>25&lt;/td>
+            &lt;/tr>
+        &lt;/tfoot>
+    &lt;/table>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/6 Web Tablolar.html/3.png" alt="6.3" width="100%">
+        </div>
+
+        <h2>Sütünları Gruplama</h2>
+        <pre id="preh2">HTML'de tablordaki sütünları gruplandırabiliriz. Bu durum daha çok şuanlık pek bir ifade etmez. Ancak CSS'e geldiğimizde çokça işimize yarıyacak bir özelliktir.</pre>
+
+        <pre id="preh2">Örnek olması için ilk üç satırı gruplandıralım;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;table border="1">
+        &lt;colgroup>
+            &lt;col span="3"> &lt;!-- İlk üç sütunü gruplandırdık -->
+        &lt;/colgroup>
+
+        &lt;thead>
+            &lt;tr>
+                &lt;th colspan="7">Çarpma Tablosu&lt;/th>
+            &lt;/tr>
+
+            &lt;tr>
+                &lt;th>&lt;/th>
+
+                &lt;th>X&lt;/th>
+                &lt;th>1&lt;/th>
+                &lt;th>2&lt;/th>
+                &lt;th>3&lt;/th>
+                &lt;th>4&lt;/th>
+                &lt;th>5&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        
+        &lt;tbody>
+            &lt;tr>
+                &lt;th rowspan="6">Çarpma Tablosu&lt;/th>
+                
+                &lt;th>1&lt;/th>
+                &lt;td>1&lt;/td>
+                &lt;td>2&lt;/td>
+                &lt;td>3&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>5&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>2&lt;/th>
+                &lt;td>2&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>10&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>3&lt;/th>
+                &lt;td>3&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>9&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>15&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>4&lt;/th>
+                &lt;td>4&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>16&lt;/td>
+                &lt;td>20&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+
+        &lt;tfoot>
+            &lt;tr>
+                &lt;td>&lt;/td>
+
+                &lt;th>5&lt;/th>
+                &lt;td>5&lt;/td>
+                &lt;td>10&lt;/td>
+                &lt;td>15&lt;/td>
+                &lt;td>20&lt;/td>
+                &lt;td>25&lt;/td>
+            &lt;/tr>
+        &lt;/tfoot>
+    &lt;/table>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh2">Görüntüde hernagi bir değişiklik gözlemlenmez.</pre>
+
+        <h2>Erişebilirlik</h2>
+        <pre id="preh2">Erişebilirlik, <code>&lt;th>&lt;/th></code> etiketine eklenen ve önveri içeren bir özellik olan <code>scope</code>'tur. Görevi şu; "Bu etiket satır için mi yoksa sütun için mi?" sorusuna yanıt verir. Görsel için bir değişiklik göstermez. Uygulayalım;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;table border="1">
+        &lt;colgroup>
+            &lt;col span="3">
+        &lt;/colgroup>
+
+        &lt;thead>
+            &lt;tr>
+                &lt;th colspan="7" scope="col">Çarpma Tablosu&lt;/th> &lt;!-- Sütun için -->
+            &lt;/tr>
+
+            &lt;tr>
+                &lt;th>&lt;/th>
+
+                &lt;th>X&lt;/th>
+                &lt;th>1&lt;/th>
+                &lt;th>2&lt;/th>
+                &lt;th>3&lt;/th>
+                &lt;th>4&lt;/th>
+                &lt;th>5&lt;/th>
+            &lt;/tr>
+        &lt;/thead>
+        
+        &lt;tbody>
+            &lt;tr>
+                &lt;th rowspan="6" scope="row">Çarpma Tablosu&lt;/th> &lt;!-- Satır için -->
+                
+                &lt;th>1&lt;/th>
+                &lt;td>1&lt;/td>
+                &lt;td>2&lt;/td>
+                &lt;td>3&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>5&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>2&lt;/th>
+                &lt;td>2&lt;/td>
+                &lt;td>4&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>10&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>3&lt;/th>
+                &lt;td>3&lt;/td>
+                &lt;td>6&lt;/td>
+                &lt;td>9&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>15&lt;/td>
+            &lt;/tr>
+            &lt;tr>
+                &lt;th>4&lt;/th>
+                &lt;td>4&lt;/td>
+                &lt;td>8&lt;/td>
+                &lt;td>12&lt;/td>
+                &lt;td>16&lt;/td>
+                &lt;td>20&lt;/td>
+            &lt;/tr>
+        &lt;/tbody>
+
+        &lt;tfoot>
+            &lt;tr>
+                &lt;td>&lt;/td>
+
+                &lt;th>5&lt;/th>
+                &lt;td>5&lt;/td>
+                &lt;td>10&lt;/td>
+                &lt;td>15&lt;/td>
+                &lt;td>20&lt;/td>
+                &lt;td>25&lt;/td>
+            &lt;/tr>
+        &lt;/tfoot>
+    &lt;/table>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <h2>Kaynakça</h2>
+        <ul>
+            <li><a href="https://www.geeksforgeeks.org/html/html-tables/">https://www.geeksforgeeks.org/html/html-tables/</a></li>
+            <li><a href="https://www.w3schools.com/html/html_table_colgroup.asp">https://www.w3schools.com/html/html_table_colgroup.asp</a></li>
+            <li><a href="https://www.geeksforgeeks.org/html/html-scope-attribute/">https://www.geeksforgeeks.org/html/html-scope-attribute/</a></li>
+        </ul>
+    </div>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./5 Web Listeler.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="./7 Web Formlar.html" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2026 Data's Book</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 Web İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- Muhammet Enes nam-ı diğer Data Delete tarafından sevgi ile yapıldı <3 -->

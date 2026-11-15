@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data's Book on Web</title>
+
+    <link rel="icon" type="image/x-icon" href="../Sources/favicon.svg">
+
+    <script src="../Sources/JS/setBackgroundMedia.js"></script>
+
+    <link rel="stylesheet" href="../Sources/JS/hljs/atom-one-dark-reasonable.css">
+    <script src="../Sources/JS/hljs/highlight.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+        };
+    </script>
+
+    <link rel="stylesheet" href="../Sources/CSS/main.css">
+</head>
+<body>
+    <h1>Listeler</h1>
+
+    <div style="height: 100px;"></div>
+    
+    <div id="mainDiv">
+        <h2>Listeler Nedir?</h2>
+        <pre id="preh2">Listeler, bir konu üzerine sıralı, sırasız alt bilgi vermek veya örneklendirmek için kullanılır.</pre>
+
+        <pre id="preh2">HTML'de sırasız, sıralı ve konu konu olarak üç ayrı liste türü bulunur.</pre>
+
+        <h2>Sırasız Liste</h2>
+        <pre id="preh2">Sırasız liste, noktalar veya karelerle yani sayısız bir şekilde liste sunar. Sırasız liste türünde en üstdeki ebeveyn <code>&lt;ul>&lt;/ul></code> etiketidir. Ebeveynin çocukları yani liste elemanları <code>&lt;li>&lt;/li></code> etiketleri içerisine yazılır. Liste elemanı olarak; fotoğraflar, videolar ve bağlantılar gibi unsurlarda eklenebilir.</pre>
+
+        <pre id="preh2">Örnek bir liste yapalım;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Yazılım Dilleri&lt;/h1>
+    &lt;ul> &lt;!-- Sırasız liste etiketi -->
+        &lt;li>Assembly&lt;/li> &lt;!-- Liste elemanı etiketi -->
+        &lt;li>C&lt;/li>
+        &lt;li>C++&lt;/li>
+        &lt;li>Rust&lt;/li>
+    &lt;/ul>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh2">Çıktısı;</pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/5 Web Listeler.html/1.png" alt="5.1" width="100%">
+        </div>
+
+        <h2>Sıralı Liste</h2>
+        <pre id="preh2">Sıralı liste, başında sayılar, harfler veya roman rakamları gibi yukarıdan aşağı artarak giden düzenli listelerdir. <code>&lt;ol>&lt;/ol></code> etiketinde yazılarak, <code>&lt;li>&lt;/li></code> ile de liste elemanları oluşturulur.</pre>
+
+        <pre id="preh2">Bir önceki örneğimizi sıralı hale getirelim;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;nitial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Yazılım Dilleri&lt;/h1>
+    &lt;ol> &lt;!-- Sıralı liste etiketi -->
+        &lt;li>Assembly&lt;/li> &lt;!-- Liste elemanı etiketi -->
+        &lt;li>C&lt;/li>
+        &lt;li>C++&lt;/li>
+        &lt;li>Rust&lt;/li>
+    &lt;/ol>
+&lt;/body>
+&lt;/html></code></pre>
+
+            <pre id="preh2">Çıktı;</pre>
+
+            <div id="divh2Img">
+                <img src="../Bibliography/5 Web Listeler.html/2.png" alt="5.2" width="100%">
+            </div>
+
+            <h3>Özellikleri</h3>
+
+            <pre id="preh3"><code>type</code> özelliği, listenin hangi rakam veya harfler ile sıralancağını belirtir. Değer olarak "1", "a", "A", "i" ve "I" alabilir. Aşağıda bir örneği verilmiştir;</pre>
+            
+            <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Yazılım Dilleri&lt;/h1>
+    &lt;ol type="1">
+        &lt;li>Assembly&lt;/li>
+        &lt;li>C&lt;/li>
+        &lt;li>C++&lt;/li>
+        &lt;li>Rust&lt;/li>
+    &lt;/ol>
+
+    &lt;h1>Donanımlar&lt;/h1>
+    &lt;ol type="a">
+        &lt;li>Ekran Kartı&lt;/li>
+        &lt;li>İşlemci&lt;/li>
+        &lt;li>Anakart&lt;/li>
+        &lt;li>RAM&lt;/li>
+    &lt;/ol>
+
+    &lt;h1>Web Dilleri&lt;/h1>
+    &lt;ol type="A">
+        &lt;li>HTML&lt;/li>
+        &lt;li>CSS&lt;/li>
+        &lt;li>JavaScpirt&lt;/li>
+    &lt;/ol>
+
+    &lt;h1>İnsan Dilleri&lt;/h1>
+    &lt;ol type="i">
+        &lt;li>Türkçe&lt;/li>
+        &lt;li>İngilizce&lt;/li>
+        &lt;li>Almanca&lt;/li>
+    &lt;/ol>
+
+    &lt;h1>Sosyal Medya Platformları&lt;/h1>
+    &lt;ol type="I">
+        &lt;li>X&lt;/li>
+        &lt;li>Instagram&lt;/li>
+    &lt;/ol>
+&lt;/body>
+&lt;/html></code></pre>
+
+            <div id="divh3Img">
+                <img src="../Bibliography/5 Web Listeler.html/3.png" alt="5.3" width="100%">
+            </div>
+
+            <pre id="preh3"><code>start</code> özelliği, listenin hangi sayıdan itibariyle başlıyacağını belirtir.</pre>
+
+            <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Yazılım Dilleri&lt;/h1>
+    &lt;ol start="2134">
+        &lt;li>Assembly&lt;/li>
+        &lt;li>C&lt;/li>
+        &lt;li>C++&lt;/li>
+        &lt;li>Rust&lt;/li>
+    &lt;/ol>
+&lt;/body>
+&lt;/html></code></pre>
+
+            <div id="divh3Img">
+                <img src="../Bibliography/5 Web Listeler.html/4.png" alt="5.4" width="100%">
+            </div>
+
+            <h2>Konu Tanımlı Liste</h2>
+            <pre id="preh2">Konu tanımlı liste, birden fazla konu üzerine maddeler halinde ve konu başlıklarında altında konu açıklaması bulunduran listelerdir. Ana etiket <code>&lt;dl>&lt;/dl</code>, konu başlıkları <code>&lt;dt>&lt;/dt</code> ve konu açıklamaları <code>&lt;dd>&lt;/dd</code> olarak yazılır.</pre>
+
+            <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Yazılım Dilleri&lt;/h1>
+    &lt;dl>
+        &lt;dt>Assembly&lt;/dt>
+        &lt;dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorem voluptatibus ipsum repudiandae, itaque molestias laborum voluptate dolore cum repellendus neque eveniet error nihil nesciunt fugiat expedita ipsam aut nobis.&lt;/dd>
+        &lt;dt>C&lt;/dt>
+        &lt;dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorem voluptatibus ipsum repudiandae, itaque molestias laborum voluptate dolore cum repellendus neque eveniet error nihil nesciunt fugiat expedita ipsam aut nobis.&lt;/dd>
+        &lt;dt>C++&lt;/dt>
+        &lt;dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorem voluptatibus ipsum repudiandae, itaque molestias laborum voluptate dolore cum repellendus neque eveniet error nihil nesciunt fugiat expedita ipsam aut nobis.&lt;/dd>
+        &lt;dt>Rust&lt;/dt>
+        &lt;dd>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime dolorem voluptatibus ipsum repudiandae, itaque molestias laborum voluptate dolore cum repellendus neque eveniet error nihil nesciunt fugiat expedita ipsam aut nobis.&lt;/dd>
+    &lt;/dl>
+&lt;/body>
+&lt;/html></code></pre>
+
+            <div id="divh2Img">
+                <img src="../Bibliography/5 Web Listeler.html/5.png" alt="5.5" width="100%">
+            </div>
+
+            <h2>İç İçe Listeler</h2>
+            <pre id="preh2">İç içe liste, bir liste elemanına alt liste elemanı eklememizi sağlar. İç içe liste yapabilmek için, liste elemanın içerisine bir tane liste etiketi yapmamız yeterlidir.</pre>
+
+            <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Yazılım Dilleri&lt;/h1>
+    &lt;ul>
+        &lt;li>
+            Assembly
+
+            &lt;ol>
+                &lt;li>C&lt;/li>
+                &lt;li>
+                    C++
+
+                    &lt;ul>
+                        &lt;li>Rust&lt;/li>
+                    &lt;/ul>
+                &lt;/li>
+            &lt;/ol>
+        &lt;/li>
+
+    &lt;/ul>
+&lt;/body>
+&lt;/html></code></pre>
+
+            <div id="divh2Img">
+                <img src="../Bibliography/5 Web Listeler.html/6.png" alt="5.6" width="100%">
+            </div>
+
+            <h2>Kaynakça</h2>
+            <ul>
+                <li><a href="https://www.w3schools.com/tags/att_ol_type.asp">https://www.w3schools.com/tags/att_ol_type.asp</a></li>
+                <li><a href="https://www.w3schools.com/tags/att_ol_start.asp">https://www.w3schools.com/tags/att_ol_start.asp</a></li>
+            </ul>
+    </div>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./4 Web Temel Etiketler.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="./6 Web Tablolar.html" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2026 Data's Book</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 Web İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- Muhammet Enes nam-ı diğer Data Delete tarafından sevgi ile yapıldı <3 -->

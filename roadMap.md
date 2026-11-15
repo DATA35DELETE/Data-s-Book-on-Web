@@ -115,7 +115,6 @@
 - **`<select>`, `<option>`, `<optgroup>`**: Açılır Liste. `multiple`, `selected`. Tanım. Örnek.
 - **`<datalist>` Etiketi**: Otomatik Tamamlama Listesi. Tanım. Örnek.
 - **`<fieldset>` ve `<legend>`**: Form Gruplama. Tanım. Örnek.
-- **`<output>` Etiketi**: Hesaplama Sonucu. Tanım. Örnek.
 - **`<progress>` ve `<meter>`**: İlerleme ve Ölçüm Çubuğu. Tanım. Örnek.
 - **`<button>` Etiketi**: `type` Attribute. `submit`, `reset`, `button`. Input ile Farkı. Tanım. Örnek.
 - **Form Doğrulama (Validation)**

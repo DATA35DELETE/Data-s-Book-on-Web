@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data's Book on Web</title>
+
+    <link rel="icon" type="image/x-icon" href="../Sources/favicon.svg">
+
+    <script src="../Sources/JS/setBackgroundMedia.js"></script>
+
+    <link rel="stylesheet" href="../Sources/JS/hljs/atom-one-dark-reasonable.css">
+    <script src="../Sources/JS/hljs/highlight.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+        };
+    </script>
+
+    <link rel="stylesheet" href="../Sources/CSS/main.css">
+</head>
+<body>
+    <h1>Formlar</h1>
+
+    <div style="height: 100px;"></div>
+    
+    <div id="mainDiv">
+        <h2>Formlar Nedir?</h2>
+        <pre id="preh2">Formlar, HTML'de kullanıcıdan girdi alıp, verileri PHP, Spring Boot veya Axum gibi Web kütüphanelere göndermek için kullanılır. Böylelikle kullanıcı ile HTML arasında veri akışı gerçekleşebilir.</pre>
+
+        <h3>Etiketi</h3>
+        <pre id="preh3">Etiketi <code>&lt;form>&lt/form></code> etiketidir. Özellikleri ise;</pre>
+
+        <ul>
+            <li><code>action</code> özelliği, verilerin gönderilceği dizini ifade eder. Daha çok bir PHP, Spring Boot veya Axum dosyasıdır.</li>
+            <li><code>method</code> özelliği, verilerin gönderilirken açık mı yoksa kapalı mı gönderilceğini ifade eder. "get" veya "post" değeri alabilir. "get" değerinde giden veriler açık açık Url'den gözükebilir şeklinde giderler. Yani giden verileri herkes görebilir. "post" değerinde ise giden verilen şifreli bir biçimde ve kapalı şeklinde gider. Böylelikle gizli veriler gözükmemiş olur. Ayrıca "get" değerinde dosya göndirelemezken, "post" değerinde dosya gönderilebilir.</li>
+            <li><code>enctype</code> özelliği, verilerin nasıl kodlanması gerektiği belirten özelliktir. "application/x-www-form-urlencoded", "multipart/form-data" ve "text/plain" değerlerini alabilir. "application/x-www-form-urlencoded" değerinde veriler şifrelenir. "multipart/form-data" değerinde, formdan gidecek olan bir dosya ise bu değer kullanılır. "text/plain" değeri ise şifreleme yapmaz. Ortadaki adam saldırısa müsait olduğundan kullanımı önerilmez</li>
+        </ul>
+
+        <h3>Örnek</h3>
+        <pre id="preh3">İki farklı form örneği yazalım. Formlarda kullanıcıdan isim ve soyisim istesin. Birinci form "get" ile göndersin, ikincisi ise "post" ile göndersin. Bakalım nasıl bir farkı var?</pre>
+
+        <pre id="codeh3"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>Get&lt;/h1>
+
+    &lt;form action="/giris.php" method="get">
+        &lt;label for="ad">Adınız: &lt;input type="text" name="name" id="1">&lt;/label>
+        &lt;label for="soyad">Soyadınız: &lt;input type="text" name="surname" id="2">&lt;/label>
+
+        &lt;input type="submit">
+    &lt;/form>
+
+    &lt;br>&lt;hr>&lt;br>
+
+    &lt;h1>Post&lt;/h1>
+
+    &lt;form action="/giris.php" method="post">
+        &lt;label for="ad">Adınız: &lt;input type="text" name="name" id="1">&lt;/label>
+        &lt;label for="soyad">Soyadınız: &lt;input type="text" name="surname" id="2">&lt;/label>
+
+        &lt;input type="submit">
+    &lt;/form>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh3Img">
+            <img src="../Bibliography/7 Web Formlar.html/1.png" alt="7.1">
+        </div>
+
+        <pre id="preh3">Gördüğünüz gibi formlarımız geldi. Şimdi ben her iki formdaki ad bölümüne "Data" soyad bölümüne ise "Delete" yazıp gönder butonuna basıcağım. Ardından bakalım nasıl Url'ler gelicek karşımıza</pre>
+
+        <pre id="preh3">İlk formdan çıkan Url <code>http://127.0.0.1:5500/giris.php?name=Data&surname=Delete</code> oldu. Sizde anlamışsınızdır ki veriler tabiri caizse kabak gibi iletilmektedir.</pre>
+        <pre id="preh3">İkinci formdan çıkan Url <code>http://127.0.0.1:5500/giris.php</code> oldu. Peki veriler nerde? Verilen arka planda bir HTTP isteği olarak gönderilerek iletildi. Bu ne demek? Verilerimiz gizli bir şekilde iletildi demek!</pre>
+
+        <h2>Input</h2>
+        <pre id="preh2"><code>&lt;input>&lt;/input></code> etiketi, formdaki kullanıcıdan veri alınan yerlerin tamamında kullanılan bir etikettir. Aynı etiket ile hem yazı girdisi alabilir hem renk seçici yaptırtabilir hemde tarih ve saat girdisi alabilirsiniz. Bunun için kullanılan yöntem, her bir eleman için <code>type</code> özelliğinin değeridir. Örnek olarak <code>type</code> değeri "text" ise yazı girdisi, değeri "file" ise dosya girdisi alınabilir. Ayrıca eğer formda girilmesi zorunlu bir değer var ise <code>required</code> özelliği ile belirtilir. Hadi inceleyelim;</pre>
+
+        <h3>Yazı Girdisi</h3>
+        <pre id="preh3">Yazı girdisi alabilmek için <code>type</code>'ın değeri "text" olmalıdır. Tek satırlı yazı girdisini kabul eder.</pre>
+
+        <pre id="preh3">Kendisine has özellikler aşağıda verilmiştir;</pre>
+
+        <ul>
+            <li><code>placeholder</code> özelliği, kullanıcı girdisi olmadığı takdirde gözükücek olan hafif soluk bir yazıdır.</li>
+            <li><code>maxlength</code> özelliği, en fazla kaç karakter girdisi alınabilceğini belirler.</li>
+            <li><code>minlength</code> özelliği, en az kaç karakter girdisi alınabilceğini belirler.</li>
+            <li><code>pattern</code> özelliği, girdi için REGEX eklememizi sağlar.</li>
+        </ul>
+
+        <h3>Şifre Girdisi</h3>
+        <pre id="preh3">Şifre girdisi alabilmek için <code>type</code>'ın değeri "password" olmalıdır. Şifre girdisinde yazılan karakterler "•" sembolü ile gizlenirler.</pre>
+
+        <h3>E-Posta Girdisi</h3>
+        <pre id="preh3">E-Posta girdisi alabilmek için <code>type</code>'ın değeri "email" olmalıdır. E-Posta girdisinde kullanıcı bir e-posta adresi girmediğinde uyarı verir ve form değerleri göndermez. E-Posta girilip girilmediğini HTML kendisi kontrol eder.</pre>
+
+        <h3>Sayı Girdisi</h3>
+        <pre id="preh3">Sayı girdisi alabilmek için <code>type</code>'ın değeri "number" olmalıdır. Şifre girdisinde sadece sayılar girilebilir.</pre>
+
+        <h3>Telefon Numarası Girdisi</h3>
+        <pre id="preh3">Telefon numarası girdisi alabilmek için <code>type</code>'ın değeri "tel" olmalıdır.</pre>
+
+        <h3>Url Girdisi</h3>
+        <pre id="preh3">Url girdisi alabilmek için <code>type</code>'ın değeri "url" olmalıdır. Url girdisinde kullanıcı bir Url girmediğinde uyarı verir ve form değerleri göndermez. Url girilip girilmediğini HTML kendisi kontrol eder.</pre>
+
+        <h3>Arama Girdisi</h3>
+        <pre id="preh3">Arama girdisi alabilmek için <code>type</code>'ın değeri "search" olmalıdır.</pre>
+
+        <h3>Zaman ve Tarih Girdileri</h3>
+        <pre id="preh3">Zaman ve tarih girdileri için bir çok seçenek vardır. Aşağıda hepsi verilmiştir;</pre>
+
+        <ul>
+            <li>"date" değeri, sadece tarih girmemizi sağlar.</li>
+            <li>"time" değeri, sadece zaman girmemizi sağlar.</li>
+            <li>"datetime-local" değeri, hem zaman hemde tarih girmemizi sağlar.</li>
+            <li>"month" değeri, sadece ay girmemizi sağlar.</li>
+            <li>"week" değeri, sadece hafta girmemizi sağlar.</li>
+        </ul>
+
+        <h3>Renk Girdisi</h3>
+        <pre id="preh3">Renk girdisi alabilmek için <code>type</code>'ın değeri "color" olmalıdır.</pre>
+
+        <h3>Kaydırıcı Girdisi</h3>
+        <pre id="preh3">Kaydırıcı girdisi alabilmek için <code>type</code>'ın değeri "range" olmalıdır.</pre>
+
+        <pre id="preh3">Kendisine has özellikler aşağıda verilmiştir;</pre>
+
+        <ul>
+            <li><code>min</code> özelliği, kaydırıcının en az kaç sayı alabilceğini belirtir.</li>
+            <li><code>max</code> özelliği, kaydırıcının en fazla kaç sayı alabilceğini belirtir.</li>
+            <li><code>step</code> özelliği, kaydırıcının sayılarının kaç kaç artıcağını belirler.</li>
+        </ul>
+
+        <h3>Dosya Girdisi</h3>
+        <pre id="preh3">Dosya girdisi alabilmek için <code>type</code>'ın değeri "file" olmalıdır.</pre>
+
+        <pre id="preh3">Kendisine has özellikler aşağıda verilmiştir;</pre>
+
+        <ul>
+            <li><code>accept</code> özelliği, kabul edilen dosya türlerini belirtir.</li>
+            <li><code>multiple</code> özelliği, birden fazla dosya göndermeyi belirler.</li>
+        </ul>
+
+        <h3>Kontrol Kutusu Girdisi</h3>
+        <pre id="preh3">Kontrol kutusu girdisi alabilmek için <code>type</code>'ın değeri "checkbox" olmalıdır.</pre>
+        
+        <pre id="preh3">Kendisine has özellik aşağıda verilmiştir;</pre>
+
+        <ul>
+            <li><code>checked</code> özelliği, varsayılan olarak seçelip seçilmediğini belirler.</li>
+        </ul>
+
+        <h3>İşaretleme Kutusu Girdisi</h3>
+        <pre id="preh3">İşaretleme kutusu girdisi alabilmek için <code>type</code>'ın değeri "radio" olmalıdır.</pre>
+        
+        <pre id="preh3">Kontrol ile işaretleme kutularını birbirine çok karıştılır. İkiside bir koşulu kabul edip etmediğini kontrol eder. Lakin kontrol kutusunda birden fazla seçim yapılabilirken, işaretleme kutusunda sadece tek bir işaretleme kutusu seçili olabilir. Geri kalanlar seçilemezdir.</pre>
+
+        <h3>Gizli Eleman</h3>
+        <pre id="preh3">Gizli eleman için <code>type</code>'ın değeri "hidden" olmalıdır. Gizli elemanın görevi kullanıcıya gözükmeyen bilgilerinde bulundurmasını sağlamak. "hidden" girdiler gözükmezler.</pre>
+
+        <h3>Buton Elemanlar</h3>
+        <pre id="preh3">Buton elemanlar, <code>&lt;input>&lt;/input></code> etiketinde birden fazla varyasyonları vardır. Aşağıda varyasyonları ve işlevleri verilmiştir.</pre>
+
+        <ul>
+            <li><code>submit</code> değeri, formu göndermek için bir butondur.</li>
+            <li><code>reset</code> değeri, formu temizlemek için bir butondur.</li>
+            <li><code>button</code> değeri, normal bir buttondur.</li>
+        </ul>
+
+        <pre id="preh3">Ayrıca içerisine yazı yazabilmemiz için <code>value</code> özelliğini kullanırız.</pre>
+
+        <h2>Yazı Elemanı</h2>
+        <pre id="preh2">Formda sadece yazı yazmak için <code>&lt;label>&lt;/label></code> etiketi kullanılır. <code>for</code> özniteliği ise de hangi <code>name</code> özelliği taşıyan <code>&lt;input>&lt;/input></code> etiketine özel olduğunu belirtir.</pre>
+
+        <h2>Çok Satırlı Yazı Girdisi</h2>
+        <pre id="preh2">Eğer birden fazla satırlı yazı girdisi almamız gerekiyorsa <code>&lt;textarea>&lt;/textarea></code> etiketi kullanılır.</pre>
+        
+        <pre id="preh2">Kendisine has özellik aşağıda verilmiştir;</pre>
+
+        <ul>
+            <li><code>col</code> özelliği, gösterilen kısmın kaç karater göstereceğini belirler.</li>
+            <li><code>row</code> özelliği, gösterilen kısmın kaç satır göstereceğini belirler.</li>
+        </ul>
+
+        <h2>Açılır Liste</h2>
+        <pre id="preh2">HTML'de açılır liste yapabilmek için <code>&lt;select>&lt;/select></code>, <code>&lt;option>&lt;/option></code> ve <code>&lt;optgroup>&lt;/optgroup></code> etiketleri kullanılır. Aşağıda örnek bir açılır pencere verilmiştir.</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;select name="acilirPencere" id="2">
+    &lt;option value="birinciSecenek">Birinci Seçenek&lt;/option>
+    &lt;option value="ikinciSecenek">İkinci Seçenek&lt;/option>
+    &lt;option value="ucuncuSecenek">Üçüncü Seçenek&lt;/option>
+    &lt;option value="dorduncuSecenek">Dördüncü Seçenek&lt;/option>
+&lt;/select></code></pre>
+
+        <pre id="preh2"><code>&lt;optgroup>&lt;/optgroup></code> etiketi ile de seçenekleri gruplandırabiliriz;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;select name="acilirPencere" id="2">
+    &lt;optgroup label="birinciGrup">
+        &lt;option value="birinciSecenek">Birinci Seçenek&lt;/option>
+        &lt;option value="ikinciSecenek">İkinci Seçenek&lt;/option>
+    &lt;/optgroup>
+    &lt;optgroup label="ikinciGrup">
+        &lt;option value="ucuncuSecenek">Üçüncü Seçenek&lt;/option>
+        &lt;option value="dorduncuSecenek">Dördüncü Seçenek&lt;/option>
+    &lt;/optgroup>
+&lt;/select></code></pre>
+        
+        <pre id="preh2">Kendisine has özellik aşağıda verilmiştir;</pre>
+
+        <ul>
+            <li><code>multiple</code> özelliği, birden fazla seçimi izin verir.</li>
+        </ul>
+
+        <h2>Otomatik Tamamlama Listesi</h2>
+        <pre id="preh2">Otomatik tamamlama listesi, <code>&lt;input>&lt;/input></code> etiketinde yazılan harflere göre kendi içerisinde değerleri öneren bir sistemdir. <code>&lt;datalist>&lt;/datalist></code> ve <code>&lt;option>&lt;/option></code> etiketleri ile yapılır. <code>&lt;datalist>&lt;/datalist></code> etiketinin Id'si ile <code>&lt;input>&lt;/input></code> etiketinin <code>list</code> özelliği birbirine bağlınarak yapılır. Aşağıda örnek bir otomatik tanımlama verilmiştir.</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;input list="secenekler" name="otomatikTamamlama" id="otomatikTamamlama">
+
+&lt;datalist id="secenekler"> &lt;!-- Id ile bağladık -->
+    &lt;option value="birinciSecenek">
+    &lt;option value="ikinciSecenek">
+    &lt;option value="ucuncuSecenek">
+    &lt;option value="dorduncuSecenek">
+&lt;/datalist></code></pre>
+
+        <h2>Formu Kendi İçerinde Ayırma</h2>
+        <pre id="preh2">Formu kendi içerisinde ayrımak için <code>&lt;fieldset>&lt;/fieldset></code>, ayrılan kısımlara başlık kondurmak için de <code>&lt;legend>&lt;/legend></code> kullanılır.</pre>
+
+        <h2>İlerme Çubukları</h2>
+        <pre id="preh2">HTML'de birden fazla ilerleme çubuğu vardır. Biri <code>&lt;progress>&lt;/progress></code>, diğeri ise <code>&lt;meter>&lt;/meter></code>'dir. <code>value</code> özelliği ile güncel değerleri ayarlanırken, <code>max</code> özelliği ile en fazla değer alabilecekleri sınır belirlenir. <code>min</code> özellikleri yoktur. Çünkü her zaman sıfır değerindedir. <code>&lt;progress>&lt;/progress></code> ve <code>&lt;meter>&lt;/meter></code> arasındaki farkı ise birinin mavi diğerininde yeşil olmasıdır.</pre>
+
+        <h2>Buton</h2>
+        <pre id="preh2">HTML'de buton eklemek için <code>&lt;button>&lt;/button></code> etiketi kullanılır. <code>&lt;input>&lt;/input></code> etiketi gibi <code>type</code> özelliği vardır. "sumbit", "reset" ve "button" değerlerini alabilir. İşlev olarak <code>&lt;input>&lt;/input></code>'deki <code>type</code> özelliklerinden bir farkı yoktur.</pre>
+
+        <h2>Uygulama</h2>
+        <pre id="preh2">Şimdi... O kadar anlattık anlattık hadi şimdi uygulayalım! Bu bölümde bilerek sizlere örnekleri önceden vermedim. Sizden bir iş başvurusu formu istiyorum. Yönlendirceği dizin "giris" olsun, "post" ile göndersin ve "application/x-www-form-urlencoded" ile şifrelensin. Form gruplu yani bölüm bölüm olsun. Örnek olarak en sevdiği gibi konularda "Kişisel Bilgiler" olsun. Gerekli bilgilerde zorunlu olarak girilsin. Aşağıda verdiğim bilgiler olsun;</pre>
+
+        <ul>
+            <li>İsim</li>
+            <li>Soyisim</li>
+            <li>Şifresi</li>
+            <li>E-Posta adresi</li>
+            <li>Telefon numarası</li>
+            <li>Ona ait olan bir sosyal medya hesabı Url'si</li>
+            <li>Doğum tarihi ve saati</li>
+            <li>En sevdiği renk</li>
+            <li>Bu işte ne kadar iyi olduğu(Range olucak)</li>
+            <li>Ona ait bir fotoğraf</li>
+            <li>Bildiği diller</li>
+            <li>Cinsiyeti</li>
+            <li>Kendisini tanıtan üç cümle</li>
+            <li>Hangi şehirde doğduğu(select)</li>
+            <li>En sevdiği mevye(datalist)</li>
+        </ul>
+
+        <pre id="preh2">Şimdi açın geliştirme ortamınızı ve KODLAYIN! Tabi size ben aşağıda bu formun kodlarını vericeğim. Ama gerçekten öğrenmek istiyorsanız kendiniz kodlamasınız. Tabi ordan kopyalayıp "Yaptım" demekte var, "KENDİM YAPTIM!" demekte var... Aşağıda olması gereken görseli bıraktım;</pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/7 Web Formlar.html/2.png" alt="7.2" width="100%">
+        </div>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h1>İş Başvuru Formu&lt;/h1>
+    &lt;form action="/giris" method="post" enctype="application/x-www-form-urlencoded">
+        &lt;fieldset>
+            &lt;legend>Gerekli Bilgiler&lt;/legend>
+
+            &lt;label for="isim">İsminiz: &lt;/label>&lt;input type="text" name="name" id="name" required>
+
+            &lt;br>&lt;br>
+
+            &lt;label for="soyisim">Soyisminiz: &lt;/label>&lt;input type="text" name="soyisim" id="soyisim" required>
+
+            &lt;br>&lt;br>
+
+            &lt;label for="sifre">Şifreniz: &lt;/label>&lt;input type="password" name="sifre" id="sifre" required>
+
+            &lt;br>&lt;br>
+
+            &lt;label for="posta">E-Posta Adresiniz: &lt;/label>&lt;input type="email" name="posta" id="posta" required>
+
+
+            &lt;br>&lt;br>
+
+            &lt;label for="dogum">Doğum tarihini ve saati: &lt;/label>&lt;input type="datetime-local" name="dogum" id="dogum" required>
+
+            &lt;br>&lt;br>
+            
+            &lt;label for="hesap">Bir adet size ait sosyal medya hesabınız: &lt;/label>&lt;input type="url" name="hesap" id="hesap">
+        &lt;/fieldset>
+        &lt;fieldset>
+            &lt;legend>Kişisel Bilgiler&lt;/legend>
+
+            &lt;label for="renk">En sevdiğiniz renk: &lt;/label>&lt;input type="color" name="renk" id="renk">
+
+            &lt;br>&lt;br>
+
+            &lt;label for="beceri">Bu işte ne kadar iyisiniz?: &lt;/label>0 &lt;input type="range" name="beceri" id="beceri"> 100
+
+            &lt;br>&lt;br>
+
+            &lt;label for="foto">Size ait bir resim: &lt;/label>&lt;input type="file" name="foto" id="foto" accept="image/*" >
+            
+            &lt;br>&lt;br>
+
+            &lt;label for="dil">Bildiğiniz diller: &lt;/label>&lt;input type="checkbox" name="dil" id="assembly">Assembly
+                                                        &lt;input type="checkbox" name="dil" id="C">C
+                                                        &lt;input type="checkbox" name="dil" id="C++">C++
+                                                        &lt;input type="checkbox" name="dil" id="Rust">Rust
+            
+            &lt;br>&lt;br>
+
+            &lt;label for="cinsiyet">Cinsiyetiniz: &lt;/label>&lt;input type="radio" name="cinsiyet" id="cinsiyet">Erkek
+                                                        &lt;input type="radio" name="cinsiyet" id="cinsiyet">Kadın
+                                                        &lt;input type="radio" name="cinsiyet" id="cinsiyet">Özel
+                                                        &lt;input type="radio" name="cinsiyet" id="cinsiyet">Belirtmek istemiyorum
+            
+            &lt;br>&lt;br>
+
+            &lt;label for="tanitanCumle">Kendinizi üç cümle ile tanıtın: &lt;/label>&lt;textarea name="tanitanCumle" id="tanitanCumle" cols="50" rows="10">&lt;/textarea>
+            
+            &lt;br>&lt;br>
+
+            &lt;label for="sehir">Hangi şehirde doğudunuz: &lt;/label>
+            &lt;select name="sehir" id="sehir">
+                &lt;option>İzmir&lt;/option>
+                &lt;option>İstanbul&lt;/option>
+                &lt;option>Ankara&lt;/option>
+            &lt;/select>
+            
+            &lt;br>&lt;br>
+
+            &lt;label for="meyve">En sevdiğiniz meyve: &lt;/label> &lt;input type="text" name="meyveText" id="meyveText" list="meyve">
+            &lt;datalist id="meyve">
+                &lt;option value="Erik">&lt;/option>
+                &lt;option value="Kiraz">&lt;/option>
+                &lt;option value="Çilek">&lt;/option>
+                &lt;option value="Badem">&lt;/option>
+                &lt;option value="Karpuz">&lt;/option>
+            &lt;/datalist>
+            
+            &lt;br>&lt;br>
+        &lt;/fieldset>
+
+        &lt;input type="submit" value="Gönder">
+        &lt;button type="reset">Temizle&lt;/button>
+    &lt;/form>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <h2>Kaynakça</h2>
+        <ul>
+            <li><a href="https://www.w3schools.com/tags/att_form_enctype.asp">https://www.w3schools.com/tags/att_form_enctype.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_input_pattern.asp">https://www.w3schools.com/tags/att_input_pattern.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_input_step.asp">https://www.w3schools.com/tags/att_input_step.asp</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/accept">https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Attributes/accept</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_input_multiple.asp">https://www.w3schools.com/tags/att_input_multiple.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/att_textarea_cols.asp">https://www.w3schools.com/tags/att_textarea_cols.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_select.asp">https://www.w3schools.com/tags/tag_select.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_datalist.asp">https://www.w3schools.com/tags/tag_datalist.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_optgroup.asp">https://www.w3schools.com/tags/tag_optgroup.asp</a></li>
+            <li><a href="https://www.w3schools.com/tags/tag_fieldset.asp">https://www.w3schools.com/tags/tag_fieldset.asp</a></li>
+            <li><a href="https://www.w3schools.com/htmlcss/htmlcss_forms_validation.asp">https://www.w3schools.com/htmlcss/htmlcss_forms_validation.asp</a></li>
+        </ul>
+    </div>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./6 Web Tablolar.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="./8 Web Semantik.html" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2026 Data's Book</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 Web İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- Muhammet Enes nam-ı diğer Data Delete tarafından sevgi ile yapıldı <3 -->

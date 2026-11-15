@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data's Book on Web</title>
+
+    <link rel="icon" type="image/x-icon" href="../Sources/favicon.svg">
+
+    <script src="../Sources/JS/setBackgroundMedia.js"></script>
+
+    <link rel="stylesheet" href="../Sources/JS/hljs/atom-one-dark-reasonable.css">
+    <script src="../Sources/JS/hljs/highlight.min.js"></script>
+    <script>
+        window.onload = function() {
+            hljs.highlightAll();
+        };
+    </script>
+
+    <link rel="stylesheet" href="../Sources/CSS/main.css">
+</head>
+<body>
+    <h1>Semantik</h1>
+
+    <div style="height: 100px;"></div>
+    
+    <div id="mainDiv">
+        <h2>Semantik Nedir?</h2>
+        <pre id="preh2">Semantik, HTML'de grafiksel olarak anlamı olmayan ama anlam olarak oldukça farklışan etiketlere denir. Yani kullanıcı arayüzü yerine tarayıcıya yönelik etiketlerdir.</pre>
+
+        <pre id="preh2">Şimdi, eski zamanlarda HTML'de belirli kısımları bölerek kodlanır ki halade öyle... Bu duruma biz <code>&lt;div>&lt;/div></code> denirdi. <code>&lt;div>&lt;/div></code> etiketi bizlere bir bütün olan HTML'i parça parça ayırmamızı sağlardı. Mesela bir <code>&lt;div>&lt;/div></code> kullınıcı verilerini, bir başka <code>&lt;div>&lt;/div></code> ise yapılan işlemleri gösterirdi. <code>&lt;div>&lt;/div></code> etiketi "division" kelimesinden gelmektedir.</pre>
+
+        <pre id="preh2">İyi güzel hoş ama <code>&lt;div>&lt;/div></code> anlamsal olarak hiç bir öge içermezdi. Siz veriler içinde <code>&lt;div>&lt;/div></code> kullanırdınız, oyun skor tablosu içinde <code>&lt;div>&lt;/div></code> kullanırdınız. Bu durum <code>&lt;div>&lt;/div></code> içerisinde <code>&lt;div>&lt;/div></code> içerisinde <code>&lt;div>&lt;/div></code> içerisinde gibi yüzlerce <code>&lt;div>&lt;/div></code> etiketin iç içe geçmisiyle kod karman çorman bir hal alırdı. Bu durumu "Div Soup" yani "Div Çorbası" denirdi. İşte bu gibi durumlar için HTML semantik etiketleri geliştirmiştir. Çok kullanılan sayfa üstü bilgileri, sayfa altı, sayfanın ana alanı, ana bölümler gibi gibi alanlar için kullanılması için etiketler HTML'e eklenmiştir. Böylelikle yazılımcılar hem yazdıkları kodları daha iyi okuyabiliyorlardı hemde geliştirme aşamasında karmaşıklık önleniyordu. Unutmayın bu etiketler herhangi bir grafik değişim göstermezler. Yani semantik yerine normal <code>&lt;div>&lt;/div></code> kullansanızda herhangi bir değişiklik olmaz. Lakin semantik kullanmak geliştirme aşamasında daha sağlıklıdır.</pre>
+
+        <pre id="preh2">Şimdi gelin bu etiketleri inceleyelim;</pre>
+
+        <h2>Üst Sayfa Bölgesi</h2>
+        <pre id="preh2">İlla görmüşsünüzdür sayfaların üstlerindeki elemanları; logo, linkler veya arama kısmı gibi elemanların olduğunu. İşte bunu yazılımcılar üst sayfa bölgesi veya <code>&lt;header>&lt;/header></code> denir. <code>&lt;header>&lt;/header></code> etiketinin içerisinde bağlantılar ise bir başka semantik etiket olan <code>&lt;nav>&lt;/nav></code> etiketlerine yazılırlar.</pre>
+
+        <pre id="preh2">Gelin bir örnek yapalım. Örneğimiz DataBaseCompany ile ilgili olucak olan sayfamızın üst sayfa bölgesini tasarlayalım;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;header>
+        &lt;img src="logonunFotografi" alt="icon"> DataBaseCompany 
+        
+        &lt;nav>
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="anaSayfa">Ana Sayfa&lt;/a>
+                    &lt;a href="hakkimizda">Hakkımızda&lt;/a>
+                    &lt;a href="icerikler">İçerikler&lt;/a>
+                    &lt;a href="calismalar">Çalışmalar&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/8 Web Semantik.html/1.png" alt="8.1" width="100%">
+        </div>
+
+        <h2>Ana Bölge</h2>
+        <pre id="preh2">Ana bölge, safyanın içeriğinin olduğu kısımdır. <code>&lt;main>&lt;/main></code> ana bölgenin etiketi, <code>&lt;section>&lt;/section></code> <code>&lt;main>&lt;/main></code> etiketini bölümlere ayrma etiketi ve <code>&lt;article>&lt;/article></code> ise <code>&lt;section>&lt;/section></code> içerisinde bağımsız olarak bölge ayırmamızı sağlar.</pre>
+
+        <pre id="preh2">Örneğimizi genişletelim. Sayfamızda "Giriş", "Hakkımızda", "İçerikler" ve "Çalışmalar" bölümleri olsun. Tüm bölümleri <code>&lt;main>&lt;/main></code> etiketi kaplasın. Bölümlerin her biri <code>&lt;section>&lt;/section></code> etiketinden oluşsun ve içerisinde segilencek olan yapıtlarda <code>&lt;article>&lt;/article></code> etiketi ile yapalım. Tabi gerçekten içeriklerini yamıcağız. Test amaçlı olduğu için <code>lorem</code> ile yapaçağız.</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;header>
+        &lt;img src="logonunFotografi" alt="icon"> DataBaseCompany 
+        
+        &lt;nav>
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="anaSayfa">Ana Sayfa&lt;/a>
+                    &lt;a href="hakkimizda">Hakkımızda&lt;/a>
+                    &lt;a href="icerikler">İçerikler&lt;/a>
+                    &lt;a href="calismalar">Çalışmalar&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+
+    &lt;main>
+        &lt;section>
+            &lt;h1>Hakkımızda&lt;/h1>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repudiandae, similique hic aut quasi aspernatur unde assumenda distinctio, cupiditate officiis quae et ducimus sapiente culpa doloremque. Placeat quos delectus fugit.&lt;/p>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>İçerikler&lt;/h1>
+
+            &lt;article>
+                &lt;h2>icerik1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>Çalışmalar&lt;/h1>
+
+            &lt;article>
+                &lt;h2>calisma1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+    &lt;/main>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/8 Web Semantik.html/2.png" alt="8.2" width="100%">
+        </div>
+
+        <h2>Yan Bölgeler</h2>
+        <pre id="preh2">Yan bölgeler; reklamlar veya "hamburger tarzı içindekiler" içerikler için ayrılmış bir semantik etikettir. <code>&lt;aside>&lt;/aside></code> etiketi ile konulur.</pre>
+
+        <pre id="preh2">Şimdi sitemize reklam ekliyelim...</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;header>
+        &lt;img src="logonunFotografi" alt="icon"> DataBaseCompany 
+        
+        &lt;nav>
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="anaSayfa">Ana Sayfa&lt;/a>
+                    &lt;a href="hakkimizda">Hakkımızda&lt;/a>
+                    &lt;a href="icerikler">İçerikler&lt;/a>
+                    &lt;a href="calismalar">Çalışmalar&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+
+    &lt;main>
+        &lt;section>
+            &lt;h1>Hakkımızda&lt;/h1>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repudiandae, similique hic aut quasi aspernatur unde assumenda distinctio, cupiditate officiis quae et ducimus sapiente culpa doloremque. Placeat quos delectus fugit.&lt;/p>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>İçerikler&lt;/h1>
+
+            &lt;article>
+                &lt;h2>icerik1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>Çalışmalar&lt;/h1>
+
+            &lt;article>
+                &lt;h2>calisma1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+    &lt;/main>
+
+    &lt;aside>&lt;img src="reklamIcon" alt="reklam fotoğrafı"> ŞOK ŞOK ŞOK!!!! DataBaseShopping'ın sunduğu fiyatlar başka yerde YOK! HEMEN ALIN: ---> &lt;a href="reklamUrl">www.dbc.shopping.com&lt;/a> &lt;---&lt;/aside>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/8 Web Semantik.html/3.png" alt="8.3" width="100%">
+        </div>
+
+        <pre id="preh2">Tabi işin komik kısmı bir tarafa reklamlar böyle eklenmez. Reklamlar için arkada devasa bir sistem çalışması gerekir. Ama kabaca bu şekilde gözükürler.</pre>
+
+        <h2>Alt Sayfa Bölgesi</h2>
+        <pre id="preh3">Alt sayfa bölgesi ise sayfanın altında her alan ve sayfayla ilgili iletişim bilgilerinin bulunduğu kısımdır. <code>&lt;footer>&lt;/footer></code> etiketi ile gerçekleştirilir.</pre>
+
+        <pre id="preh2">Şimdi de sayfamıza iletişim bölümü ekliyelim;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;header>
+        &lt;img src="logonunFotografi" alt="icon"> DataBaseCompany 
+        
+        &lt;nav>
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="anaSayfa">Ana Sayfa&lt;/a>
+                    &lt;a href="hakkimizda">Hakkımızda&lt;/a>
+                    &lt;a href="icerikler">İçerikler&lt;/a>
+                    &lt;a href="calismalar">Çalışmalar&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+
+    &lt;main>
+        &lt;section>
+            &lt;h1>Hakkımızda&lt;/h1>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repudiandae, similique hic aut quasi aspernatur unde assumenda distinctio, cupiditate officiis quae et ducimus sapiente culpa doloremque. Placeat quos delectus fugit.&lt;/p>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>İçerikler&lt;/h1>
+
+            &lt;article>
+                &lt;h2>icerik1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>Çalışmalar&lt;/h1>
+
+            &lt;article>
+                &lt;h2>calisma1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+    &lt;/main>
+
+    &lt;aside>&lt;img src="reklamIcon" alt="reklam fotoğrafı"> ŞOK ŞOK ŞOK!!!! DataBaseShopping'ın sunduğu fiyatlar başka yerde YOK! HEMEN ALIN: ---> &lt;a href="reklamUrl">www.dbc.shopping.com&lt;/a> &lt;---&lt;/aside>
+
+    &lt;footer>
+        &lt;h1>İletişim Bilgileri&lt;/h1>
+        &lt;ul>
+            &lt;li>&lt;a href="mailto:info@dbc.com">E-Posta&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="tel:0322-324-21-11">Telefon Numaramız&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/footer>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/8 Web Semantik.html/4.png" alt="8.4" width="100%">
+        </div>
+
+        <h2>Açılır-Kapanır İçerik</h2>
+        <pre id="preh2">Bu içeriği oluşturabilmek için <code>&lt;details>&lt;/details></code> ve <code>&lt;summary>&lt;/summary></code> etiketleri ile yapılır. <code>&lt;summary>&lt;/summary></code> etiketine konun özeti yazılırken, <code>&lt;details>&lt;/details></code> etiketine uzun açıklaması yapılır.</pre>
+
+        <pre id="preh2">Hadi şimdi sitemize bazı özetler yazalım.</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;header>
+        &lt;img src="logonunFotografi" alt="icon"> DataBaseCompany 
+        
+        &lt;nav>
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="anaSayfa">Ana Sayfa&lt;/a>
+                    &lt;a href="hakkimizda">Hakkımızda&lt;/a>
+                    &lt;a href="icerikler">İçerikler&lt;/a>
+                    &lt;a href="calismalar">Çalışmalar&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+
+    &lt;main>
+        &lt;section>
+            &lt;h1>Hakkımızda&lt;/h1>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repudiandae, similique hic aut quasi aspernatur unde assumenda distinctio, cupiditate officiis quae et ducimus sapiente culpa doloremque. Placeat quos delectus fugit.&lt;/p>
+
+            &lt;details>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates atque nam adipisci? Cum tempore optio esse aperiam tempora facere nam voluptas saepe dolorum delectus labore, reprehenderit distinctio ducimus quaerat! Soluta?
+                Ducimus officiis nisi minima inventore magnam, praesentium, consequuntur explicabo aliquid, cupiditate consectetur neque ab exercitationem id provident earum error vitae totam voluptates maxime modi vel atque! Accusantium quia labore nisi.
+
+                &lt;summary>Lorem&lt;/summary>
+            &lt;/details>
+
+        &lt;/section>
+        &lt;section>
+            &lt;h1>İçerikler&lt;/h1>
+
+            &lt;article>
+                &lt;h2>icerik1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>Çalışmalar&lt;/h1>
+
+            &lt;article>
+                &lt;h2>calisma1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+    &lt;/main>
+
+    &lt;aside>&lt;img src="reklamIcon" alt="reklam fotoğrafı"> ŞOK ŞOK ŞOK!!!! DataBaseShopping'ın sunduğu fiyatlar başka yerde YOK! HEMEN ALIN: ---> &lt;a href="reklamUrl">www.dbc.shopping.com&lt;/a> &lt;---&lt;/aside>
+
+    &lt;footer>
+        &lt;h1>İletişim Bilgileri&lt;/h1>
+        &lt;ul>
+            &lt;li>&lt;a href="mailto:info@dbc.com">E-Posta&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="tel:0322-324-21-11">Telefon Numaramız&lt;/a>&lt;/li>
+        &lt;/ul>
+    &lt;/footer>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/8 Web Semantik.html/5.png" alt="8.5" width="100%">
+        </div>
+
+        <h2>Dialog</h2>
+        <pre id="preh2">HTML'de dialoglar oluşturabiliriz. Ana dialog penceresi <code>&lt;dialog>&lt;/dialog></code> etiketleri ile yapılır. Ardından dialoğun Id'si ile açma veya kapama işlemleri gerçekleştirilebilir. Bu işlemler için; <code>command</code> özelliği ile hangi işlemin yapılcağı ve <code>commandfor</code> özelliği ile hangi Id'li dialoğa etki edeceğini belirleriz.</pre>
+
+        <pre id="preh2">Hadi sitemize bir "yardım" dialoğu ekliyelim;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;dialog id="yardim-dialogu">
+        &lt;h1>Biz daha kendimize yardım edemiyoruz ki size yardım edelim.&lt;/h1>
+        &lt;button type="button" command="close" commandfor="yardim-dialogu">Kapat&lt;/button>
+    &lt;/dialog>
+
+    &lt;header>
+        &lt;img src="logonunFotografi" alt="icon"> DataBaseCompany 
+        
+        &lt;nav>
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="anaSayfa">Ana Sayfa&lt;/a>
+                    &lt;a href="hakkimizda">Hakkımızda&lt;/a>
+                    &lt;a href="icerikler">İçerikler&lt;/a>
+                    &lt;a href="calismalar">Çalışmalar&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+
+    &lt;main>
+        &lt;section>
+            &lt;h1>Hakkımızda&lt;/h1>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repudiandae, similique hic aut quasi aspernatur unde assumenda distinctio, cupiditate officiis quae et ducimus sapiente culpa doloremque. Placeat quos delectus fugit.&lt;/p>
+
+            &lt;details>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates atque nam adipisci? Cum tempore optio esse aperiam tempora facere nam voluptas saepe dolorum delectus labore, reprehenderit distinctio ducimus quaerat! Soluta?
+                Ducimus officiis nisi minima inventore magnam, praesentium, consequuntur explicabo aliquid, cupiditate consectetur neque ab exercitationem id provident earum error vitae totam voluptates maxime modi vel atque! Accusantium quia labore nisi.
+
+                &lt;summary>Lorem&lt;/summary>
+            &lt;/details>
+
+        &lt;/section>
+        &lt;section>
+            &lt;h1>İçerikler&lt;/h1>
+
+            &lt;article>
+                &lt;h2>icerik1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>Çalışmalar&lt;/h1>
+
+            &lt;article>
+                &lt;h2>calisma1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+    &lt;/main>
+
+    &lt;aside>&lt;img src="reklamIcon" alt="reklam fotoğrafı"> ŞOK ŞOK ŞOK!!!! DataBaseShopping'ın sunduğu fiyatlar başka yerde YOK! HEMEN ALIN: ---> &lt;a href="reklamUrl">www.dbc.shopping.com&lt;/a> &lt;---&lt;/aside>
+
+    &lt;footer>
+        &lt;h1>İletişim Bilgileri&lt;/h1>
+        &lt;ul>
+            &lt;li>&lt;a href="mailto:info@dbc.com">E-Posta&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="tel:0322-324-21-11">Telefon Numaramız&lt;/a>&lt;/li>
+        &lt;/ul>
+
+        
+        &lt;button type="button" command="show-modal" commandfor="yardim-dialogu">Yardım içim&lt;/button>
+    &lt;/footer>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Vid">
+            <video src="../Bibliography/8 Web Semantik.html/6.mp4" alt="8.6" width="100%"></video>
+        </div>
+
+        <h2>Zaman Etiketi</h2>
+        <pre id="preh2">İçerisine zamanı yazılır, fazladan <code>datetime</code> özelliği ile detay verilir. <code>&lt;time>&lt;/time></code> etiketi ile yazılır.</pre>
+
+        <pre id="preh2">Hadi sitemize birde zaman ekliyelim;</pre>
+    
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;dialog id="yardim-dialogu">
+        &lt;h1>Biz daha kendimize yardım edemiyoruz ki size yardım edelim.&lt;/h1>
+        &lt;button type="button" command="close" commandfor="yardim-dialogu">Kapat&lt;/button>
+    &lt;/dialog>
+
+    &lt;header>
+        &lt;img src="logonunFotografi" alt="icon"> DataBaseCompany 
+        
+        &lt;nav>
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="anaSayfa">Ana Sayfa&lt;/a>
+                    &lt;a href="hakkimizda">Hakkımızda&lt;/a>
+                    &lt;a href="icerikler">İçerikler&lt;/a>
+                    &lt;a href="calismalar">Çalışmalar&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+
+    &lt;main>
+        &lt;section>
+            &lt;h1>Hakkımızda&lt;/h1>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repudiandae, similique hic aut quasi aspernatur unde assumenda distinctio, cupiditate officiis quae et ducimus sapiente culpa doloremque. Placeat quos delectus fugit.&lt;/p>
+
+            &lt;h2>Kuruluşu&lt;/h2>
+            &lt;p>DataBaseCompany, &lt;time datetime="2020-06-12T12:53">12 Haziran&lt;/time> tarihinde kurulmuştur.&lt;/p>
+
+            &lt;details>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates atque nam adipisci? Cum tempore optio esse aperiam tempora facere nam voluptas saepe dolorum delectus labore, reprehenderit distinctio ducimus quaerat! Soluta?
+                Ducimus officiis nisi minima inventore magnam, praesentium, consequuntur explicabo aliquid, cupiditate consectetur neque ab exercitationem id provident earum error vitae totam voluptates maxime modi vel atque! Accusantium quia labore nisi.
+
+                &lt;summary>Lorem&lt;/summary>
+            &lt;/details>
+
+        &lt;/section>
+        &lt;section>
+            &lt;h1>İçerikler&lt;/h1>
+
+            &lt;article>
+                &lt;h2>icerik1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>Çalışmalar&lt;/h1>
+
+            &lt;article>
+                &lt;h2>calisma1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+    &lt;/main>
+
+    &lt;aside>&lt;img src="reklamIcon" alt="reklam fotoğrafı"> ŞOK ŞOK ŞOK!!!! DataBaseShopping'ın sunduğu fiyatlar başka yerde YOK! HEMEN ALIN: ---> &lt;a href="reklamUrl">www.dbc.shopping.com&lt;/a> &lt;---&lt;/aside>
+
+    &lt;footer>
+        &lt;h1>İletişim Bilgileri&lt;/h1>
+        &lt;ul>
+            &lt;li>&lt;a href="mailto:info@dbc.com">E-Posta&lt;/a>&lt;/li>
+            &lt;li>&lt;a href="tel:0322-324-21-11">Telefon Numaramız&lt;/a>&lt;/li>
+        &lt;/ul>
+
+        
+        &lt;button type="button" command="show-modal" commandfor="yardim-dialogu">Yardım içim&lt;/button>
+    &lt;/footer>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/8 Web Semantik.html/7.png" alt="8.7" width="100%">
+        </div>
+
+        <h2>Adres Etiketi</h2>
+        <pre id="preh2">Semanti bir etiket olan <code>&lt;address>&lt;/address></code> etiketi, içerisine e-posta adresi ve telefon yazılması için konmuştur.</pre>
+
+        <pre id="preh2">Hadi sayfamızı güncelleyelim;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;dialog id="yardim-dialogu">
+        &lt;h1>Biz daha kendimize yardım edemiyoruz ki size yardım edelim.&lt;/h1>
+        &lt;button type="button" command="close" commandfor="yardim-dialogu">Kapat&lt;/button>
+    &lt;/dialog>
+
+    &lt;header>
+        &lt;img src="logonunFotografi" alt="icon"> DataBaseCompany 
+        
+        &lt;nav>
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="anaSayfa">Ana Sayfa&lt;/a>
+                    &lt;a href="hakkimizda">Hakkımızda&lt;/a>
+                    &lt;a href="icerikler">İçerikler&lt;/a>
+                    &lt;a href="calismalar">Çalışmalar&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/nav>
+    &lt;/header>
+
+    &lt;main>
+        &lt;section>
+            &lt;h1>Hakkımızda&lt;/h1>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repudiandae, similique hic aut quasi aspernatur unde assumenda distinctio, cupiditate officiis quae et ducimus sapiente culpa doloremque. Placeat quos delectus fugit.&lt;/p>
+
+            &lt;h2>Kuruluşu&lt;/h2>
+            &lt;p>DataBaseCompany, &lt;time datetime="2020-06-12T12:53">12 Haziran&lt;/time> tarihinde kurulmuştur.&lt;/p>
+
+            &lt;details>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates atque nam adipisci? Cum tempore optio esse aperiam tempora facere nam voluptas saepe dolorum delectus labore, reprehenderit distinctio ducimus quaerat! Soluta?
+                Ducimus officiis nisi minima inventore magnam, praesentium, consequuntur explicabo aliquid, cupiditate consectetur neque ab exercitationem id provident earum error vitae totam voluptates maxime modi vel atque! Accusantium quia labore nisi.
+
+                &lt;summary>Lorem&lt;/summary>
+            &lt;/details>
+
+        &lt;/section>
+        &lt;section>
+            &lt;h1>İçerikler&lt;/h1>
+
+            &lt;article>
+                &lt;h2>icerik1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+        &lt;section>
+            &lt;h1>Çalışmalar&lt;/h1>
+
+            &lt;article>
+                &lt;h2>calisma1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/article>
+        &lt;/section>
+    &lt;/main>
+
+    &lt;aside>&lt;img src="reklamIcon" alt="reklam fotoğrafı"> ŞOK ŞOK ŞOK!!!! DataBaseShopping'ın sunduğu fiyatlar başka yerde YOK! HEMEN ALIN: ---> &lt;a href="reklamUrl">www.dbc.shopping.com&lt;/a> &lt;---&lt;/aside>
+
+    &lt;footer>
+        &lt;h1>İletişim Bilgileri&lt;/h1>
+        &lt;ul>
+            &lt;address>info@dbc.com&lt;/address>
+            &lt;address>0213 123 34 12&lt;/address>
+        &lt;/ul>
+
+        
+        &lt;button type="button" command="show-modal" commandfor="yardim-dialogu">Yardım içim&lt;/button>
+    &lt;/footer>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <div id="divh2Img">
+            <img src="../Bibliography/8 Web Semantik.html/8.png" alt="8.8" width="100%">
+        </div>
+
+        <h2>Div ve Span</h2>
+        <pre id="preh2">Az öncekinler semantik etiketlerdi. Ama şimdi semantik olmayan etiketlere bakalım. <code>&lt;div>&lt;/div></code> etiketi bu diğer gösterdiğimiz bütün semantik etiketlerin yaptıklarından farksız bir etikettir. Tek görevi sadece bölge ayırmaktır. <code>&lt;span>&lt;/span></code> etiketi ise yazılar için <code>&lt;div>&lt;/div></code> gibidir. <code>&lt;span>&lt;/span></code> etiketinde yazılardan bazı yerleri ayrmak için kullanılır.</pre>
+
+        <pre id="preh2">Şimdi sayfamızı tamamiyle <code>&lt;div>&lt;/div></code> etiketlerinden oluşan bir "Çorbaya" dönüştürelim;</pre>
+
+        <pre id="codeh2"><span>index.html</span><code class="language-html">&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+    &lt;meta charset="UTF-8">
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0">
+    &lt;title>Document&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;dialog id="yardim-dialogu">
+        &lt;h1>Biz daha kendimize yardım edemiyoruz ki size yardım edelim.&lt;/h1>
+        &lt;button type="button" command="close" commandfor="yardim-dialogu">Kapat&lt;/button>
+    &lt;/dialog>
+
+    &lt;div>
+        &lt;img src="logonunFotografi" alt="icon"> DataBaseCompany 
+        
+        &lt;div>
+            &lt;ul>
+                &lt;li>
+                    &lt;a href="anaSayfa">Ana Sayfa&lt;/a>
+                    &lt;a href="hakkimizda">Hakkımızda&lt;/a>
+                    &lt;a href="icerikler">İçerikler&lt;/a>
+                    &lt;a href="calismalar">Çalışmalar&lt;/a>
+                &lt;/li>
+            &lt;/ul>
+        &lt;/div>
+    &lt;/div>
+
+    &lt;div>
+        &lt;div>
+            &lt;h1>Hakkımızda&lt;/h1>
+            &lt;p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore repudiandae, similique hic aut quasi aspernatur unde assumenda distinctio, cupiditate officiis quae et ducimus sapiente culpa doloremque. Placeat quos delectus fugit.&lt;/p>
+
+            &lt;h2>Kuruluşu&lt;/h2>
+            &lt;p>DataBaseCompany, &lt;time datetime="2020-06-12T12:53">12 Haziran&lt;/time> tarihinde kurulmuştur.&lt;/p>
+
+            &lt;details>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates atque nam adipisci? Cum tempore optio esse aperiam tempora facere nam voluptas saepe dolorum delectus labore, reprehenderit distinctio ducimus quaerat! Soluta?
+                Ducimus officiis nisi minima inventore magnam, praesentium, consequuntur explicabo aliquid, cupiditate consectetur neque ab exercitationem id provident earum error vitae totam voluptates maxime modi vel atque! Accusantium quia labore nisi.
+
+                &lt;summary>Lorem&lt;/summary>
+            &lt;/details>
+
+        &lt;/div>
+        &lt;div>
+            &lt;h1>İçerikler&lt;/h1>
+
+            &lt;div>
+                &lt;h2>icerik1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>icerik3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/div>
+        &lt;/div>
+        &lt;div>
+            &lt;h1>Çalışmalar&lt;/h1>
+
+            &lt;div>
+                &lt;h2>calisma1&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma2&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+                &lt;h2>calisma3&lt;/h2>
+                &lt;p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur, voluptate illum fuga nemo fugiat possimus sit laborum explicabo? Atque illum corporis quia hic id, molestias incidunt iusto quidem nam ut!&lt;/p>
+            &lt;/div>
+        &lt;/div>
+    &lt;/div>
+
+    &lt;div>&lt;img src="reklamIcon" alt="reklam fotoğrafı"> ŞOK ŞOK ŞOK!!!! DataBaseShopping'ın sunduğu fiyatlar başka yerde YOK! HEMEN ALIN: ---> &lt;a href="reklamUrl">www.dbc.shopping.com&lt;/a> &lt;---&lt;/div>
+
+    &lt;div>
+        &lt;h1>İletişim Bilgileri&lt;/h1>
+        &lt;ul>
+            &lt;address>info@dbc.com&lt;/address>
+            &lt;address>0213 123 34 12&lt;/address>
+        &lt;/ul>
+
+        
+        &lt;button type="button" command="show-modal" commandfor="yardim-dialogu">Yardım içim&lt;/button>
+    &lt;/div>
+&lt;/body>
+&lt;/html></code></pre>
+
+        <pre id="preh2">Görünüşte bir farklılık gözlenmez.</pre>
+
+        <h2>Kaynakça</h2>
+        <ul>
+            <li><a href="https://en.wikipedia.org/wiki/Semantic_HTML">https://en.wikipedia.org/wiki/Semantic_HTML</a></li>
+            <li><a href="https://medium.com/@mosesmartins/understanding-div-soup-in-html-and-how-to-avoid-it-a2fee375f9e2">https://medium.com/@mosesmartins/understanding-div-soup-in-html-and-how-to-avoid-it-a2fee375f9e2</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog">https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/dialog</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/time">https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/time</a></li>
+            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/address">https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements/address</a></li>
+        </ul>
+    </div>
+
+    <div style="height: 100px;"></div>
+
+    <footer style="position: fixed; left: 0; bottom: 0; width: 100%; background: transparent; text-align: center; padding: 10px 0; z-index: 100;">
+        <div>
+            <a href="./7 Web Formlar.html" style="margin-right: 20px; cursor:pointer;">
+                &larr; Önceki
+            </a>
+            <a href="" style="cursor:pointer;">
+                Sonraki &rarr;
+            </a>
+        </div>
+        <div>
+            <p>&copy; 2026 Data's Book</p>
+        </div>
+
+        <div style="position: absolute; right: 20px; bottom: 20px;">
+            <a href="./1 Web İçindekiler.html" style="text-decoration: none;">
+                İçindekiler
+            </a>
+        </div>
+    </footer>
+</body>
+</html>
+
+<!-- Muhammet Enes nam-ı diğer Data Delete tarafından sevgi ile yapıldı <3 -->
